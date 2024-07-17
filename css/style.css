@@ -143,14 +143,22 @@ sub {
 sup {
   top: -.5em; }
 
-  .rounded-image {
+.rounded-image {
     width: 100%;
+    height: auto;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     border: 5px solid #fff; /* Optional: Add a border around the image */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
+}
+
+@media (max-width: 768px) {
+    .rounded-image {
+        width: 200px; /* Fixed width for mobile devices */
+        height: 350px; /* Fixed height for mobile devices */
+    }
 }
 
 a {
