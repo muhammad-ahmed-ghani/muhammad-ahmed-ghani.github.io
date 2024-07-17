@@ -1,1 +1,1 @@
-# muhammad-ahmed-ghani.github.io
+Personal Static Website
