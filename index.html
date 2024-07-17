@@ -109,9 +109,9 @@
 					</div>
 					<div class="counter-wrap ftco-animate d-flex mt-md-3">
 						<div class="text">
-							<p><a href="" class="btn btn-primary py-3 px-3">Download CV</a></p>
+							<p><a id="downloadLink" href="files/resume.pdf" class="btn btn-primary py-3 px-3" download>Download CV</a></p>
 						</div>
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>
@@ -499,5 +499,26 @@
 	<script src="js/main.js"></script>
 
 </body>
-
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Select the download link element
+		var downloadLink = document.getElementById('downloadLink');
+	
+		// Add an event listener for click events
+		downloadLink.addEventListener('click', function(event) {
+			// Prevent the default behavior of the link (opening the file in the browser)
+			event.preventDefault();
+	
+			// Use JavaScript to trigger the download
+			var resumeFile = 'files/resume.pdf'; // Path to your resume PDF file
+			var link = document.createElement('a');
+			link.href = resumeFile;
+			link.download = 'resume.pdf'; // Name of the downloaded file
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		});
+	});
+	</script>
+	
 </html>
