@@ -4,6 +4,166 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+/* Mobile-first responsive styles */
+
+/* Base responsive styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Navigation styles */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 18px;
+  }
+  
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+  }
+
+  .navbar-nav {
+    padding-top: 15px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+}
+
+/* Hero section */
+@media (max-width: 768px) {
+  .hero-wrap {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 0;
+  }
+
+  .slider-text h1 {
+    font-size: 40px;
+  }
+
+  .slider-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* About section */
+@media (max-width: 768px) {
+  .img-about {
+    margin-bottom: 30px;
+  }
+
+  .rounded-image {
+    max-width: 300px;
+    margin: 0 auto 30px;
+  }
+}
+
+/* Skills section */
+@media (max-width: 768px) {
+  .row.mb-4 .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    margin-bottom: 15px;
+  }
+
+  .row.mb-4 img {
+    max-width: 40px;
+  }
+}
+
+/* Resume section */
+@media (max-width: 768px) {
+  #navi {
+    margin-bottom: 30px;
+  }
+
+  .resume-wrap {
+    padding: 15px;
+  }
+}
+
+/* Contact section */ 
+@media (max-width: 768px) {
+  .contact-info {
+    margin-bottom: 30px;
+  }
+
+  .contact-section .box {
+    padding: 20px;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  .ftco-footer {
+    text-align: center;
+  }
+
+  .ftco-footer-social {
+    justify-content: center;
+  }
+}
+
+/* Helper classes */
+@media (max-width: 768px) {
+  .px-md-5 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .py-md-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Animations */
+@media (max-width: 768px) {
+  .ftco-animate {
+    opacity: 1;
+  }
+}
+
+/* Fix scroll issues on mobile */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  a, button {
+    padding: 12px;
+  }
+}
 :root {
   --yellow: #FFAC00;
   --blue: #007bff;

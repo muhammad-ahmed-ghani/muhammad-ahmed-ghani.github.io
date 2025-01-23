@@ -11,7 +11,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="icon" href="images/favicon.png">
+	<link rel="icon" href="images/header-image2.jpg">
 
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -29,7 +29,7 @@
 		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">
-				<img src="images/header-image.jpg" alt="" class="rounded-circle" style="width: 35px; height: 35px;">
+				<img src="images/header-image2.jpg" alt="" class="rounded-circle" style="width: 35px; height: 35px;">
 				Muhammad Ahmed
 			</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
@@ -42,7 +42,7 @@
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+					<!-- <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li> -->
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
 			</div>
@@ -90,10 +90,36 @@
 		<div class="container">
 			<div class="row d-flex no-gutters">
 				<div class="col-md-6 col-lg-6 col-sm-12 d-flex justify-content-center">
-					<div class="img-about img d-flex align-items-stretch justify-content-center">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center rounded-image"
-							style="background-image:url(images/profile.jpg);">
+					<div class="img-about img d-flex align-items-stretch justify-content-center" style="
+						width: 100%;
+						max-width: 400px;
+						position: relative;
+						margin: 20px auto;">
+						<div class="overlay" style="
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							background: rgba(0,0,0,0.2);
+							border-radius: 50%;
+							z-index: 1;"></div>
+						<div class="img d-flex align-self-stretch align-items-center" style="
+							width: 100%;
+							padding-bottom: 100%;
+							border-radius: 50%;
+							background-image: url(images/profile.jpg);
+							background-size: cover;
+							background-position: center;
+							background-repeat: no-repeat;
+							box-shadow: 0 0 20px rgba(0,0,0,0.1);
+							border: 5px solid #ffffff;
+							@media (max-width: 768px) {
+								max-width: 300px;
+							}
+							@media (max-width: 480px) {
+								max-width: 250px;
+							}">
 						</div>
 					</div>
 				</div>							
@@ -111,11 +137,6 @@
 							</ul>
 						</div>
 					</div>
-					<!-- <div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p><a id="downloadLink" href="files/resume.pdf" class="btn btn-primary py-3 px-3" download>Download CV</a></p>
-						</div>
-					</div>					 -->
 				</div>
 			</div>
 		</div>
@@ -159,12 +180,14 @@
 								<img class="img-fluid" src="https://framerusercontent.com/images/5oikdu0FfL66XfLTbyUvyWL1Fg.png" title="Vyro" width="40" height="40">
 							</div>
 							<div class="text pl-3">
-								<!-- New ML Lead Position -->
 								<h2>ML Lead</h2>
 								<a href="https://vyro.ai/"><span class="position">Vyro Ai</span></a>
 								<p class="date">September 2024 - Present</p>
 								<ul>
-									<li>Leading a team of machine learning engineers to develop, deploy, and optimize advanced AI solutions, enhancing product efficiency and performance.</li>
+									<li>Leading a team of 7 machine learning engineers to develop, deploy, and optimize advanced AI solutions, enhancing product efficiency and performance.</li>
+									<li>Architected and developed <a href="https://chatlyai.app/">Chatly</a>/<a href="https://everask.ai/">Everask</a>, a state-of-the-art Agentic AI solution integrating text-to-image, image understanding, internet search, website interactions, and RAG document parsing with support for GPT-4, GPT-4-Omni, Gemini 1.5 Pro, and Claude Sonnet 3.5 models.</li>
+									<li>Spearheading the development of music studio solutions within <a href="https://imagine.art/">Imagine.art</a>, expanding the platform's creative capabilities.</li>
+									<li>Pioneered <b>AI video shorts</b> feature in Video Studio, enabling automated short-form video generation from user prompts, revolutionizing content creation.</li>
 									<li>Improved scalability and reliability of machine learning services, ensuring seamless integration and deployment across platforms.</li>
 								</ul>
 								
@@ -176,6 +199,7 @@
 								<ul>
 									<li>Changed model infrastructure from a single pod service to load all models on CPU and on request switch to GPU, eliminating the need to run a lot of pods for each service on a single pod.</li>
 									<li>Built (<a href="https://play.google.com/store/apps/details?id=ai.vyro.musicly&hl=en">Saaz</a>) Singing voice cloning product for the company with its deployment.</li>
+									<li>Developed professional-grade <b>Product Photography</b> AI solution delivering results in under 2 seconds on consumer GPUs.</li>
 								</ul>
 							</div>
 						</div>						
@@ -484,7 +508,7 @@
 						<ul class="list-unstyled">
 							<li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
 							<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-							<li><a href="#resume-section"><span class="icon-long-arrow-right mr-2"></span>Resume</a>
+							<!-- <li><a href="#resume-section"><span class="icon-long-arrow-right mr-2"></span>Resume</a> -->
 							</li>
 							<li><a href="#project-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a>
 							</li>
