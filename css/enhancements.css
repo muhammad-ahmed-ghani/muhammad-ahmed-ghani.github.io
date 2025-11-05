@@ -126,8 +126,9 @@ body {
 /* ========== HERO SECTION WITH ADVANCED ANIMATIONS ========== */
 .hero-wrap {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    padding: 8rem 0 5rem;
 }
 
 #particles-js {
@@ -223,6 +224,22 @@ body {
     z-index: 10;
 }
 
+.scrollDown-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 44px;
+    height: 64px;
+}
+
+.scrollDown-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
 .scrollDown span {
     display: block;
     width: 20px;
@@ -232,6 +249,7 @@ body {
     transform: rotate(45deg);
     margin: -10px;
     animation: scrollAnimation 2s infinite;
+    pointer-events: none;
 }
 
 .scrollDown span:nth-child(2) {
@@ -265,6 +283,47 @@ body {
 .img-about {
     perspective: 1000px;
     position: relative;
+}
+
+.profile-frame {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(249, 109, 0, 0.25) 0%, rgba(255, 172, 0, 0.1) 100%);
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.profile-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.profile-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 .img-about img {
@@ -442,6 +501,21 @@ body {
     width: 80%;
 }
 
+.skills-row {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-row .grow {
+    padding: 0.5rem 0;
+}
+
+.skill-icon {
+    max-width: 64px;
+    width: 100%;
+    height: auto;
+}
+
 /* ========== CONTACT SECTION WITH CARD EFFECTS ========== */
 .contact-section .box {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
@@ -581,6 +655,10 @@ body {
         margin-bottom: 2rem;
     }
     
+    .hero-wrap {
+        padding: 7rem 0 4rem;
+    }
+
     .hero-wrap h1 {
         font-size: 2.5rem;
     }
@@ -591,6 +669,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero-wrap {
+        padding: 6.5rem 0 3.5rem;
+    }
+
     .hero-wrap h1 {
         font-size: 2rem;
     }
@@ -621,6 +703,14 @@ body {
     .img-about {
         margin-bottom: 2rem;
     }
+
+    .profile-frame {
+        max-width: 280px;
+    }
+
+    .skill-icon {
+        max-width: 54px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -639,6 +729,14 @@ body {
     .grow {
         flex: 0 0 50%;
         max-width: 50%;
+    }
+
+    .profile-frame {
+        max-width: 220px;
+    }
+
+    .skill-icon {
+        max-width: 48px;
     }
 }
 

@@ -406,7 +406,7 @@
 	<!-- particles -->
 	<div id="particles-js" data-parallax="0.3"></div>
 
-	<section class="hero-wrap js-fullheight" data-parallax="0.2">
+	<section id="home-section" class="hero-wrap js-fullheight" data-parallax="0.2">
 		<!--       <div class="overlay"></div> -->
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
@@ -430,53 +430,26 @@
 				</div>
 			</div>
 			<div class="scrollDown">
-				<span></span>
-				<span></span>
-				<span></span>
+				<a href="#about-section" class="scrollDown-link" aria-label="Scroll to About section">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
 			</div>
 		</div>
-		</div>
-		</button>
-		<div class="glyphicon glyphicon-arrow-down"></div>
 	</section>
 
 	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" itemscope itemtype="https://schema.org/AboutPage">
 		<div class="container">
 			<div class="row d-flex no-gutters">
 				<div class="col-md-6 col-lg-6 col-sm-12 d-flex justify-content-center">
-					<div class="img-about img d-flex align-items-stretch justify-content-center float" style="
-						width: 100%;
-						max-width: 400px;
-						position: relative;
-						margin: 20px auto;">
-						<div class="overlay pulse" style="
-							position: absolute;
-							top: 0;
-							left: 0;
-							right: 0;
-							bottom: 0;
-							background: rgba(0,0,0,0.2);
-							border-radius: 50%;
-							z-index: 1;"></div>
-						<img src="images/profile.jpg" alt="Muhammad Ahmed Ghani - Lead Machine Learning Engineer and AI Solution Architect" class="img d-flex align-self-stretch align-items-center" loading="lazy" style="
-							width: 100%;
-							padding-bottom: 100%;
-							border-radius: 50%;
-							background-image: url(images/profile.jpg);
-							background-size: cover;
-							background-position: center;
-							background-repeat: no-repeat;
-							box-shadow: 0 0 20px rgba(0,0,0,0.1);
-							border: 5px solid #ffffff;
-							@media (max-width: 768px) {
-								max-width: 300px;
-							}
-							@media (max-width: 480px) {
-								max-width: 250px;
-							}">
-						</img>
+					<div class="img-about img d-flex align-items-stretch justify-content-center float">
+						<div class="profile-frame">
+							<div class="profile-overlay pulse" aria-hidden="true"></div>
+							<img src="images/profile.jpg" alt="Muhammad Ahmed Ghani - Lead Machine Learning Engineer and AI Solution Architect" class="profile-image" loading="lazy">
+						</div>
 					</div>
-				</div>							
+				</div>					
 				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section ftco-animate">
@@ -613,29 +586,29 @@
 						<h2 class="heading gradient-text">Technical Skills & Expertise</h2>
 						<p class="mb-4">Proficient in cutting-edge technologies and frameworks for building scalable AI solutions, deploying models on cloud platforms, and optimizing ML systems for production.</p>
 						<!-- Skill Section -->
-						<div class="row mb-4 ftco-animate" data-parallax="0.1">
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon Web Services AWS Cloud Platform" title="AWS" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="Google Cloud Platform GCP" title="GCP" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C Programming Language" title="C" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++ Programming Language" title="C++" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5 Web Development" title="HTML5" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3 Styling" title="CSS3" width="60" height="60"></div>
+						<div class="row mb-4 ftco-animate skills-row" data-parallax="0.1">
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon Web Services AWS Cloud Platform" title="AWS"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="Google Cloud Platform GCP" title="GCP"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C Programming Language" title="C"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++ Programming Language" title="C++"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5 Web Development" title="HTML5"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3 Styling" title="CSS3"></div>
 						</div>
-						<div class="row mb-4 ftco-animate">
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap Framework" title="Bootstrap" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Programming" title="JavaScript" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python Programming Language for Machine Learning" title="Python" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux Operating System" title="Linux" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch Deep Learning Framework" title="PyTorch" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow Machine Learning Framework" title="TensorFlow" width="60" height="60"></div>
+						<div class="row mb-4 ftco-animate skills-row">
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap Framework" title="Bootstrap"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Programming" title="JavaScript"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python Programming Language for Machine Learning" title="Python"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux Operating System" title="Linux"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch Deep Learning Framework" title="PyTorch"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow Machine Learning Framework" title="TensorFlow"></div>
 						</div>
-						<div class="row mb-4 ftco-animate">
-							<div class="col grow"><img class="img-fluid" src="images/skills/mongo.png" alt="MongoDB Database" title="MongoDB" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV Computer Vision Library" title="OpenCV" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker Containerization" title="Docker" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face Transformers" title="Hugging Face" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.svgrepo.com/download/306500/openai.svg" alt="OpenAI GPT Models" title="OpenAI" width="60" height="60"></div>
-							<div class="col grow"><img class="img-fluid" src="https://www.vectorlogo.zone/logos/onnxai/onnxai-icon.svg" alt="ONNX Model Optimization" title="ONNX" width="60" height="60"></div>
+						<div class="row mb-4 ftco-animate skills-row">
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="images/skills/mongo.png" alt="MongoDB Database" title="MongoDB"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV Computer Vision Library" title="OpenCV"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker Containerization" title="Docker"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face Transformers" title="Hugging Face"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.svgrepo.com/download/306500/openai.svg" alt="OpenAI GPT Models" title="OpenAI"></div>
+							<div class="col-4 col-sm-3 col-md-2 d-flex justify-content-center mb-3 mb-md-0 grow"><img class="img-fluid skill-icon" src="https://www.vectorlogo.zone/logos/onnxai/onnxai-icon.svg" alt="ONNX Model Optimization" title="ONNX"></div>
 						</div>
 
 

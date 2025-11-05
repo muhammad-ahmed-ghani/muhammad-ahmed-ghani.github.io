@@ -18,12 +18,19 @@
 
 
 	var fullHeight = function() {
+		var setHeight = function() {
+			var viewportHeight = window.innerHeight || $(window).height();
+			var navHeight = $('.ftco_navbar').outerHeight() || 0;
+			var target = Math.max(viewportHeight - navHeight, 0);
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
+			$('.js-fullheight').css({
+				'height': '',
+				'min-height': target
+			});
+		};
 
+		setHeight();
+		$(window).on('resize', setHeight);
 	};
 	fullHeight();
 
