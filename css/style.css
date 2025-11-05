@@ -9057,8 +9057,15 @@ h1, h2, h3, h4, h5,
         padding: 0 70px;
         margin-bottom: 40px; } }
 
-.grow { transition: .2s ease-in-out;}
-.grow:hover { transform: scale(1.15); }
+.grow { 
+  transition: .2s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.grow:hover { 
+  transform: scale(1.15); 
+}
 
 .services-1 {
   margin-bottom: 40px;
