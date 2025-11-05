@@ -1,0 +1,103 @@
+/* ========================================
+   CUSTOM CURSOR STYLES
+   ======================================== */
+
+.custom-cursor,
+.custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor {
+    width: 10px;
+    height: 10px;
+    background: #F96D00;
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+.custom-cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FFAC00;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.custom-cursor.cursor-hover {
+    transform: scale(2);
+    background: #FFAC00;
+}
+
+.custom-cursor-follower.cursor-hover {
+    transform: scale(1.5);
+    border-color: #F96D00;
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 768px) {
+    .custom-cursor,
+    .custom-cursor-follower {
+        display: none;
+    }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F96D00 0%, #FFAC00 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(249, 109, 0, 0.5);
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #F96D00 0%, #FFAC00 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(249, 109, 0, 0.4);
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(249, 109, 0, 0.6);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
