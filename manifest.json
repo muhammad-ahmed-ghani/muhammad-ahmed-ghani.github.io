@@ -1,0 +1,53 @@
+{
+  "name": "Muhammad Ahmed Ghani - Lead Machine Learning Engineer",
+  "short_name": "Ahmed Ghani ML",
+  "description": "Portfolio of Muhammad Ahmed Ghani, Lead Machine Learning Engineer and AI Solution Architect specializing in Generative AI, Computer Vision, NLP, and MLOps",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#F96D00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "technology", "ai", "machine-learning"],
+  "shortcuts": [
+    {
+      "name": "About",
+      "url": "/#about-section",
+      "description": "Learn more about Muhammad Ahmed Ghani"
+    },
+    {
+      "name": "Resume",
+      "url": "/#resume-section",
+      "description": "View professional experience and skills"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact-section",
+      "description": "Get in touch for AI/ML projects"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/header-image.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Home screen"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
