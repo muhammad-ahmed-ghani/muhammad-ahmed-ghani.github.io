@@ -1,0 +1,116 @@
+.footer {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border);
+    background: var(--surface-0);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    align-items: flex-start;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.contactItem:hover {
+    color: var(--text-main);
+}
+
+.ctaTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 16px;
+}
+
+.ctaBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: var(--transition-normal);
+}
+
+.ctaBtn:hover {
+    background: var(--surface-2);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    color: var(--text-muted);
+}
+
+.socials a:hover {
+    color: var(--text-main);
+}
+
+.bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .contactDetails,
+    .ctaButtons,
+    .socials {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}

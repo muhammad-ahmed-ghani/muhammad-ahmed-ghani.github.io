@@ -1,0 +1,80 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition-normal);
+    border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+    height: 64px;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.dot {
+    color: var(--text-dim);
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.navLink {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.navLink:hover {
+    color: var(--text-main);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-main);
+    transition: var(--transition-fast);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        /* Add hamburger menu later */
+    }
+}
