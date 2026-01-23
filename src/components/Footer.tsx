@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, MessageCircle, Calendar, Mail, Phone, MapPin } from 'lucide-react';
+import { Github, Linkedin, Twitter, Calendar, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 import styles from './Footer.module.css';
 
@@ -7,44 +7,96 @@ const Footer: React.FC = () => {
     return (
         <footer id="contact" className={styles.footer}>
             <div className="container">
-                <div className={styles.grid}>
-                    <div className={styles.info}>
-                        <h2 className={styles.name}>{portfolioData.personal.name}</h2>
-                        <p className={styles.tagline}>{portfolioData.personal.role}</p>
-                        <div className={styles.contactDetails}>
-                            <a href={`mailto:${portfolioData.personal.email}`} className={styles.contactItem}>
-                                <Mail size={16} /> {portfolioData.personal.email}
-                            </a>
-                            <a href={`tel:${portfolioData.personal.phone}`} className={styles.contactItem}>
-                                <Phone size={16} /> {portfolioData.personal.phone}
-                            </a>
-                            <div className={styles.contactItem}>
-                                <span className={styles.location}><MapPin size={16} /> {portfolioData.personal.location}</span>
-                            </div>
-                        </div>
-                    </div>
-
+                <div className={styles.top}>
                     <div className={styles.cta}>
-                        <h3 className={styles.ctaTitle}>Let's build something world-class.</h3>
-                        <div className={styles.ctaButtons}>
-                            <a href={portfolioData.personal.socials.whatsapp} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
-                                <MessageCircle size={18} /> WhatsApp
-                            </a>
-                            <a href={portfolioData.personal.socials.calendly} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
-                                <Calendar size={18} /> Book a Call
-                            </a>
-                        </div>
+                        <span className={styles.category}>Next Step</span>
+                        <h2 className={styles.ctaTitle}>
+                            Ready to architect the <br />
+                            <span className="text-gradient">future of AI?</span>
+                        </h2>
                     </div>
 
-                    <div className={styles.socials}>
-                        <a href={portfolioData.personal.socials.github} target="_blank" rel="noopener noreferrer"><Github size={22} /></a>
-                        <a href={portfolioData.personal.socials.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={22} /></a>
-                        <a href={portfolioData.personal.socials.twitter} target="_blank" rel="noopener noreferrer"><Twitter size={22} /></a>
+                    <div className={styles.actions}>
+                        <a href={portfolioData.personal.socials.calendly} target="_blank" rel="noopener noreferrer" className={styles.mainCta}>
+                            <span>Book a Consultation</span>
+                            <Calendar size={20} />
+                        </a>
+                        <a href={`mailto:${portfolioData.personal.email}`} className={styles.emailCta}>
+                            {portfolioData.personal.email}
+                        </a>
+                        <a href={`tel:${portfolioData.personal.phone.replace(/\s/g, '')}`} className={styles.phoneCta}>
+                            {portfolioData.personal.phone}
+                        </a>
+                    </div>
+                </div>
+
+                <div className={styles.grid}>
+                    <div className={styles.brand}>
+                        <div className={styles.logo}>M.A.G</div>
+                        <p className={styles.tagline}>{portfolioData.personal.role}</p>
+                    </div>
+
+                    <div className={styles.nav}>
+                        <div className={styles.navCol}>
+                            <h4>Navigation</h4>
+                            <a href="#home" onClick={(e) => { 
+                                e.preventDefault(); 
+                                const element = document.querySelector('#home');
+                                if (element) {
+                                    const rect = element.getBoundingClientRect();
+                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                                    window.scrollTo({ top: rect.top + scrollTop, behavior: 'smooth' });
+                                }
+                            }}>Home</a>
+                            <a href="#projects" onClick={(e) => { 
+                                e.preventDefault(); 
+                                const element = document.querySelector('#projects');
+                                if (element) {
+                                    const rect = element.getBoundingClientRect();
+                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                                    window.scrollTo({ top: rect.top + scrollTop, behavior: 'smooth' });
+                                }
+                            }}>Innovation</a>
+                            <a href="#skills" onClick={(e) => { 
+                                e.preventDefault(); 
+                                const element = document.querySelector('#skills');
+                                if (element) {
+                                    const rect = element.getBoundingClientRect();
+                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                                    window.scrollTo({ top: rect.top + scrollTop, behavior: 'smooth' });
+                                }
+                            }}>Stack</a>
+                            <a href="#certifications" onClick={(e) => { 
+                                e.preventDefault(); 
+                                const element = document.querySelector('#certifications');
+                                if (element) {
+                                    const rect = element.getBoundingClientRect();
+                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                                    window.scrollTo({ top: rect.top + scrollTop, behavior: 'smooth' });
+                                }
+                            }}>Certifications</a>
+                        </div>
+                        <div className={styles.navCol}>
+                            <h4>Social</h4>
+                            <a href={portfolioData.personal.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                                <Linkedin size={18} /> LinkedIn <ArrowUpRight size={14} />
+                            </a>
+                            <a href={portfolioData.personal.socials.github} target="_blank" rel="noopener noreferrer">
+                                <Github size={18} /> GitHub <ArrowUpRight size={14} />
+                            </a>
+                            <a href={portfolioData.personal.socials.twitter} target="_blank" rel="noopener noreferrer">
+                                <Twitter size={18} /> Twitter <ArrowUpRight size={14} />
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <p className={styles.copyright}>&copy; {new Date().getFullYear()} {portfolioData.personal.name}. Built for the future of AI. {portfolioData.personal.location}</p>
+                    <p>&copy; {new Date().getFullYear()} Muhammad Ahmed Ghani. Engineered for excellence.</p>
+                    <div className={styles.location}>
+                        <span className={styles.dot} />
+                        Available for Global Innovation
+                    </div>
                 </div>
             </div>
         </footer>

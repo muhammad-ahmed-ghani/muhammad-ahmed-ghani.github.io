@@ -8,29 +8,31 @@ const Experience: React.FC = () => {
         <section id="experience" className="section">
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className="text-gradient">Professional Experience</h2>
-                    <p className="text-muted">Architecting production-grade AI systems and leading ML innovation.</p>
+                    <h2 className="text-titanium">The Odyssey Timeline</h2>
+                    <p className={styles.tagline}>Architecting precision at scale.</p>
                 </div>
 
                 <div className={styles.timeline}>
-                    {portfolioData.experience.map((exp, index) => (
+                    {portfolioData.experience.slice(0, 3).map((exp, index) => (
                         <motion.div
                             key={`${exp.company}-${index}`}
                             className={styles.item}
-                            initial={{ opacity: 0, x: -30 }}
+                            initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            transition={{ duration: 1, delay: index * 0.2 }}
                         >
                             <div className={styles.meta}>
                                 <span className={styles.period}>{exp.period}</span>
                                 <span className={styles.company}>{exp.company}</span>
                             </div>
-                            <div className={styles.content}>
+                            <div className={styles.card}>
                                 <h3 className={styles.role}>{exp.role}</h3>
                                 <ul className={styles.details}>
-                                    {exp.details.map((detail, idx) => (
-                                        <li key={idx}>{detail}</li>
+                                    {exp.details.slice(0, 2).map((detail, idx) => (
+                                        <li key={idx} className={styles.detailItem}>
+                                            <span>{detail}</span>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>

@@ -11,13 +11,13 @@ const SkillHive: React.FC = () => {
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.05,
+                staggerChildren: 0.02,
             },
         },
     };
 
     const item = {
-        hidden: { opacity: 0, scale: 0.8 },
+        hidden: { opacity: 0, scale: 0.9 },
         show: { opacity: 1, scale: 1 },
     };
 
@@ -25,8 +25,8 @@ const SkillHive: React.FC = () => {
         <section id="skills" className="section">
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className="text-gradient">Technical Arsenal</h2>
-                    <p className="text-muted">A comprehensive showcase of specialized expertise in AI and Engineering.</p>
+                    <h2 className="text-titanium">The Technical Arsenal</h2>
+                    <p className={styles.tagline}>Precision tooling for production AI.</p>
                 </div>
 
                 <motion.div
@@ -39,14 +39,10 @@ const SkillHive: React.FC = () => {
                     {allSkills.map((skill, index) => (
                         <motion.span
                             key={`${skill}-${index}`}
-                            className={styles.skillBadge}
+                            className={`${styles.skillBadge} glass`}
                             variants={item}
-                            whileHover={{
-                                scale: 1.1,
-                                backgroundColor: 'rgba(255,255,255,0.1)',
-                                borderColor: 'white'
-                            }}
                         >
+                            <div className={styles.indicator} />
                             {skill}
                         </motion.span>
                     ))}

@@ -1,38 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './Cursor.module.css';
 
 const Cursor: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const cursorX = useMotionValue(-100);
-    const cursorY = useMotionValue(-100);
-
-    const springConfig = { damping: 25, stiffness: 250 };
-    const x = useSpring(cursorX, springConfig);
-    const y = useSpring(cursorY, springConfig);
+    const cursorRef = useRef<HTMLDivElement>(null);
+    const rafRef = useRef<number>();
+    const targetX = useRef(0);
+    const targetY = useRef(0);
+    const currentX = useRef(0);
+    const currentY = useRef(0);
 
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX);
-            cursorY.set(e.clientY);
+            targetX.current = e.clientX;
+            targetY.current = e.clientY;
             if (!isVisible) setIsVisible(true);
         };
 
-        window.addEventListener('mousemove', moveCursor);
-        return () => window.removeEventListener('mousemove', moveCursor);
-    }, []);
+        const animate = () => {
+            // Smooth interpolation using ease-out
+            currentX.current += (targetX.current - currentX.current) * 0.15;
+            currentY.current += (targetY.current - currentY.current) * 0.15;
+
+            if (cursorRef.current) {
+                cursorRef.current.style.transform = `translate(${currentX.current}px, ${currentY.current}px)`;
+            }
+
+            rafRef.current = requestAnimationFrame(animate);
+        };
+
+        window.addEventListener('mousemove', moveCursor, { passive: true });
+        rafRef.current = requestAnimationFrame(animate);
+
+        return () => {
+            window.removeEventListener('mousemove', moveCursor);
+            if (rafRef.current) {
+                cancelAnimationFrame(rafRef.current);
+            }
+        };
+    }, [isVisible]);
 
     return (
-        <motion.div
+        <div
+            ref={cursorRef}
             className={styles.cursor}
             style={{
-                x,
-                y,
                 opacity: isVisible ? 1 : 0,
             }}
         >
             <div className={styles.dot} />
-        </motion.div>
+        </div>
     );
 };
 

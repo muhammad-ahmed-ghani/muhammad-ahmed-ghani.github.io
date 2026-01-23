@@ -1,116 +1,164 @@
 .footer {
-    padding: 80px 0 40px;
-    border-top: 1px solid var(--border);
-    background: var(--surface-0);
+    padding: 120px 0 60px;
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--glass-border);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 120px;
+}
+
+.category {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+}
+
+.ctaTitle {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-end;
+}
+
+.mainCta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 48px;
+    background: #fff;
+    color: #000;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition-normal);
+}
+
+.mainCta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.emailCta {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.phoneCta {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr;
-    gap: 48px;
-    margin-bottom: 64px;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 40px;
 }
 
-.name {
-    font-size: 1.5rem;
+.logo {
+    font-size: 1.75rem;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .tagline {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-bottom: 16px;
+    color: var(--text-secondary);
+    max-width: 300px;
 }
 
-.contactDetails {
+.nav {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 80px;
+    justify-content: flex-end;
 }
 
-.contactItem {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    transition: var(--transition-fast);
-}
-
-.contactItem:hover {
-    color: var(--text-main);
-}
-
-.ctaTitle {
-    font-size: 1.25rem;
+.navCol h4 {
+    font-size: 0.85rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
     margin-bottom: 24px;
 }
 
-.ctaButtons {
+.navCol {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.ctaBtn {
+.navCol a {
+    font-size: 1rem;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    font-weight: 600;
-    color: var(--text-main);
-    transition: var(--transition-normal);
-}
-
-.ctaBtn:hover {
-    background: var(--surface-2);
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-}
-
-.socials {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    color: var(--text-muted);
-}
-
-.socials a:hover {
-    color: var(--text-main);
+    gap: 4px;
 }
 
 .bottom {
-    padding-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-.copyright {
-    font-size: 0.75rem;
-    color: var(--text-dim);
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #10b981;
 }
 
 @media (max-width: 1024px) {
+    .top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 48px;
+    }
+
+    .actions {
+        align-items: flex-start;
+    }
+
     .grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
+        gap: 64px;
     }
 
-    .contactDetails,
-    .ctaButtons,
-    .socials {
-        justify-content: center;
-        align-items: center;
+    .nav {
+        justify-content: flex-start;
     }
+}
 
-    .socials {
-        justify-content: center;
+@media (max-width: 640px) {
+    .bottom {
+        flex-direction: column;
+        gap: 24px;
     }
 }

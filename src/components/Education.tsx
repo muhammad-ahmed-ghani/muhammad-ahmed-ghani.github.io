@@ -1,40 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
-import styles from './Experience.module.css'; // Reusing Experience styles for consistency
+import { GraduationCap, MapPin } from 'lucide-react';
+import styles from './Experience.module.css'; // Reusing experience styles for consistency
 
 const Education: React.FC = () => {
-    const edu = portfolioData.education;
+    const { education } = portfolioData;
+
     return (
         <section id="education" className="section">
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className="text-gradient">Academic Foundation</h2>
-                    <p className="text-muted">High-impact educational background in Computer Science.</p>
+                    <span className={styles.category}>Foundations</span>
+                    <h2 className="text-gradient">Academic Credentials</h2>
+                    <p className="text-secondary">A solid foundation in computer science and artificial intelligence.</p>
                 </div>
 
-                <div className={styles.timeline}>
+                <div className={styles.timeline} style={{ maxWidth: '800px' }}>
                     <motion.div
                         className={styles.item}
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className={styles.meta}>
-                            <span className={styles.period}>{edu.period}</span>
-                            <span className={styles.company}>{edu.university}</span>
-                        </div>
-                        <div className={styles.content}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                                <GraduationCap size={20} color="var(--text-dim)" />
-                                <h3 className={styles.role}>{edu.degree}</h3>
+                        <div className={styles.marker}>
+                            <div className={styles.markerInner}>
+                                <GraduationCap size={16} />
                             </div>
-                            <p style={{ color: 'white', fontWeight: 600, marginBottom: '12px' }}>CGPA: {edu.cgpa}</p>
+                        </div>
+
+                        <div className={`${styles.card} glass glass-hover`}>
+                            <div className={styles.cardHeader}>
+                                <div className={styles.meta}>
+                                    <h3 className={styles.role}>{education.degree}</h3>
+                                    <div className={styles.companyRow}>
+                                        <span className={styles.company}>{education.university}</span>
+                                        <span className={styles.divider}>•</span>
+                                        <span className={styles.period}>{education.period}</span>
+                                    </div>
+                                    <div className={styles.companyRow} style={{ marginTop: '4px', opacity: 0.7 }}>
+                                        <MapPin size={14} />
+                                        <span>{education.location}</span>
+                                        <span className={styles.divider}>•</span>
+                                        <span>CGPA: {education.cgpa}</span>
+                                    </div>
+                                </div>
+                            </div>
+
                             <ul className={styles.details}>
-                                {edu.details.map((detail, idx) => (
-                                    <li key={idx}>{detail}</li>
+                                {education.details.map((detail, idx) => (
+                                    <li key={idx} className={styles.detailItem}>
+                                        <span className={styles.bullet}>→</span>
+                                        <p>{detail}</p>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
