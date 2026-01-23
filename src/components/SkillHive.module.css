@@ -45,3 +45,33 @@
     background: #fff;
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .header h2 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+    }
+
+    .hive {
+        gap: 10px;
+    }
+
+    .skillBadge {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skillBadge {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+    }
+}

@@ -54,6 +54,28 @@ a {
   transition: var(--transition-normal);
 }
 
+/* Touch-friendly targets for mobile */
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 768px) {
+  button,
+  a[role="button"] {
+    min-height: 48px;
+  }
+}
+
 /* Typography Perfection */
 h1,
 h2,
@@ -93,6 +115,38 @@ section {
   position: relative;
   z-index: 10;
   background: transparent;
+}
+
+/* Responsive Container */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  section {
+    padding: 120px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
 }
 
 /* Custom Scrollbar - Minimal and subtle */

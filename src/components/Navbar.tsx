@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
     const navItems = [
         { name: 'Odyssey', href: '#home' },
         { name: 'Portals', href: '#projects' },
@@ -11,6 +15,7 @@ const Navbar: React.FC = () => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
+        setIsMobileMenuOpen(false);
         const element = document.querySelector(href);
         if (element) {
             // Get the element's position relative to the viewport
@@ -38,7 +43,7 @@ const Navbar: React.FC = () => {
                     M<span className={styles.dot}>.</span>A<span className={styles.dot}>.</span>G
                 </a>
 
-                <ul className={styles.navLinks}>
+                <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
                     {navItems.map((item) => (
                         <li key={item.name}>
                             <a 
@@ -52,9 +57,18 @@ const Navbar: React.FC = () => {
                     ))}
                 </ul>
 
-                <div className={styles.indicator}>
-                    <div className={styles.dot} />
-                    <span>System Online</span>
+                <div className={styles.rightSection}>
+                    <div className={styles.indicator}>
+                        <div className={styles.dot} />
+                        <span className={styles.indicatorText}>System Online</span>
+                    </div>
+                    <button 
+                        className={styles.mobileMenuButton}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </div>
             </div>
         </motion.nav>

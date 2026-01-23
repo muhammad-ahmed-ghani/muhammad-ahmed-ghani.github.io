@@ -77,8 +77,42 @@
     opacity: 0.5;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .header {
+        margin-bottom: 48px;
+    }
+
+    .header h2 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
     .grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .certCard {
+        padding: 20px;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certCard {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .iconWrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .certName {
+        font-size: 1rem;
+    }
+
+    .meta {
+        font-size: 0.8rem;
     }
 }

@@ -74,7 +74,7 @@ const NeuralNexusCanvas: React.FC = () => {
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <Experience />
                         </div>
-                        <div style={{ position: 'relative', zIndex: 1 }}>
+                        <div style={{ position: 'relative', zIndex: 10 }}>
                             <Footer />
                         </div>
                     </Scroll>
