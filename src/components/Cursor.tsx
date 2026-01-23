@@ -4,7 +4,7 @@ import styles from './Cursor.module.css';
 const Cursor: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const cursorRef = useRef<HTMLDivElement>(null);
-    const rafRef = useRef<number>();
+    const rafRef = useRef<number | undefined>(undefined);
     const targetX = useRef(0);
     const targetY = useRef(0);
     const currentX = useRef(0);
