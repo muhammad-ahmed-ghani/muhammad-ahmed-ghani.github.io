@@ -1,79 +1,92 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 import styles from './BentoGrid.module.css';
 
 const BentoGrid: React.FC = () => {
-    const items = [
-        {
-            title: 'ImagineArt 1.5',
-            category: 'Generative AI',
-            description: 'The global standard for photorealistic text-to-image synthesis.',
-            link: 'https://www.imagine.art/image?modelListId=15',
-            gridArea: '1 / 1 / 3 / 3',
-        },
-        {
-            title: 'Imagine Shorts',
-            category: 'Video Gen',
-            description: 'AI-automated video creation for professional studios.',
-            link: 'https://www.shorts.imagine.art/dashboard',
-            gridArea: '1 / 3 / 2 / 5',
-        },
-        {
-            title: 'Imagine Avatars',
-            category: 'Computer Vision',
-            description: 'High-fidelity AI persona generation and animation.',
-            link: 'https://www.imagine.art/dashboard/avatars',
-            gridArea: '2 / 3 / 3 / 4',
-        },
-        {
-            title: 'Chatly AI',
-            category: 'Agentic NLP',
-            description: 'State-of-the-art Agentic solutions (GPT-4o/Claude).',
-            link: 'https://chatlyai.app/',
-            gridArea: '2 / 4 / 3 / 5',
-        },
-    ];
+  const projects = portfolioData.projects;
+  const featured = projects.find(p => p.featured)!;
+  const rest = projects.filter(p => !p.featured);
 
-    return (
-        <section id="projects" className="section">
-            <div className="container">
-                <header className={styles.header}>
-                    <h2 className="text-titanium">Portals of Innovation</h2>
-                    <p className={styles.tagline}>High-fidelity AI research translated into production products.</p>
-                </header>
+  return (
+    <section id="projects" className={styles.section}>
+      <div className="container">
 
-                <div className={styles.grid}>
-                    {items.map((item, index) => (
-                        <motion.a
-                            key={item.title}
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`${styles.card} glass`}
-                            style={{ gridArea: item.gridArea }}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: index * 0.1 }}
-                        >
-                            <div className={styles.cardHeader}>
-                                <span className={styles.category}>{item.category}</span>
-                                <ArrowUpRight size={20} className={styles.linkIcon} />
-                            </div>
+        {/* Section label */}
+        <div className="section-label">
+          <span className="section-number">01</span>
+          Selected Work
+        </div>
 
-                            <div className={styles.cardContent}>
-                                <h3 className={styles.cardTitle}>{item.title}</h3>
-                                <p className={styles.cardDescription}>{item.description}</p>
-                            </div>
+        <div className={styles.header}>
+          <h2 className={`text-titanium ${styles.title}`}>
+            Portals of<br />Innovation
+          </h2>
+          <p className={styles.subtitle}>
+            High-fidelity AI research translated<br />into products used by millions.
+          </p>
+        </div>
 
-                            <div className={styles.refraction} />
-                        </motion.a>
-                    ))}
-                </div>
+        {/* Featured project */}
+        <motion.a
+          href={featured.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.featured}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className={styles.featuredBg} />
+          <div className={styles.featuredContent}>
+            <div className={styles.featuredTop}>
+              <div className={styles.featuredMeta}>
+                <span className={styles.projectId}>{featured.id}</span>
+                <span className={styles.featuredBadge}>FLAGSHIP MODEL</span>
+              </div>
+              <ArrowUpRight size={28} className={styles.featuredArrow} />
             </div>
-        </section>
-    );
+            <div className={styles.featuredBottom}>
+              <p className={styles.category}>{featured.category}</p>
+              <h3 className={styles.featuredTitle}>{featured.title}</h3>
+              <p className={styles.featuredDesc}>{featured.description}</p>
+            </div>
+          </div>
+          <div className={styles.featuredGlow} />
+        </motion.a>
+
+        {/* Secondary grid */}
+        <div className={styles.grid}>
+          {rest.map((project, i) => (
+            <motion.a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className={styles.cardTop}>
+                <span className={styles.projectId}>{project.id}</span>
+                <ArrowUpRight size={18} className={styles.cardArrow} />
+              </div>
+              <div className={styles.cardBody}>
+                <p className={styles.category}>{project.category}</p>
+                <h3 className={styles.cardTitle}>{project.title}</h3>
+                <p className={styles.cardDesc}>{project.description}</p>
+              </div>
+              <div className={styles.cardLine} />
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default BentoGrid;

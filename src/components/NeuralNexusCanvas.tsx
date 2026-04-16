@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Scroll, Preload } from '@react-three/drei';
 import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocessing';
 import CameraController from './CameraController';
+import ScrollCapture from './ScrollCapture';
 import NeuralWeb from './NeuralWeb';
 import CinematicBranding from './CinematicBranding';
 import NeuralVault from './NeuralVault';
@@ -43,7 +44,8 @@ const NeuralNexusCanvas: React.FC = () => {
             >
                 <color attach="background" args={['#000000']} />
 
-                <ScrollControls pages={7} damping={0.1} style={{ scrollSnapType: 'none' }}>
+                <ScrollControls pages={9} damping={0.12} style={{ scrollSnapType: 'none' }}>
+                    <ScrollCapture />
                     <CameraController />
 
                     <Suspense fallback={null}>
@@ -55,25 +57,35 @@ const NeuralNexusCanvas: React.FC = () => {
                     </Suspense>
 
                     <Scroll html style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+                        {/* Hero */}
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <Hero />
                         </div>
-                        <div style={{ height: '30vh', position: 'relative', zIndex: 1 }} />
+                        {/* Spacer: breathe before Projects */}
+                        <div style={{ height: '40vh', position: 'relative', zIndex: 1 }} />
+                        {/* Projects / Bento */}
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <BentoGrid />
                         </div>
-                        <div style={{ height: '10vh', position: 'relative', zIndex: 1 }} />
+                        {/* Spacer */}
+                        <div style={{ height: '20vh', position: 'relative', zIndex: 1 }} />
+                        {/* Skills */}
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <SkillHive />
                         </div>
-                        <div style={{ height: '10vh', position: 'relative', zIndex: 1 }} />
+                        {/* Spacer */}
+                        <div style={{ height: '20vh', position: 'relative', zIndex: 1 }} />
+                        {/* Certifications */}
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <Certifications />
                         </div>
-                        <div style={{ height: '10vh', position: 'relative', zIndex: 1 }} />
+                        {/* Spacer */}
+                        <div style={{ height: '20vh', position: 'relative', zIndex: 1 }} />
+                        {/* Experience */}
                         <div style={{ position: 'relative', zIndex: 1 }}>
                             <Experience />
                         </div>
+                        {/* Footer – no spacer so it lands immediately after Experience */}
                         <div style={{ position: 'relative', zIndex: 10 }}>
                             <Footer />
                         </div>

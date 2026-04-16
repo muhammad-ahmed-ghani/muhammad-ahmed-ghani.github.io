@@ -1,118 +1,128 @@
+.section {
+  padding: 120px 0 100px;
+  min-height: auto;
+  position: relative;
+  z-index: 10;
+}
+@media (max-width: 768px) { .section { padding: 72px 0; } }
+@media (max-width: 480px) { .section { padding: 56px 0; } }
+
+/* ── Header ───────────────────────────────────────────── */
 .header {
-    margin-bottom: 64px;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 40px;
 }
 
-.category {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent-cyan);
-    margin-bottom: 12px;
+.title {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.9;
+  margin: 0;
 }
 
-.header h2 {
-    font-size: 3rem;
-    margin-bottom: 16px;
+.sub {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: right;
+  max-width: 320px;
+  line-height: 1.7;
+  flex-shrink: 0;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 20px;
+/* ── List ─────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.certCard {
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
+/* ── Item ─────────────────────────────────────────────── */
+.item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto 32px;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  transition: background 0.25s;
 }
 
-.iconWrapper {
-    width: 48px;
-    height: 48px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-cyan);
+.item:last-child { border-bottom: 1px solid var(--border); }
+
+.item:hover .certName { color: var(--text-primary); }
+.item:hover .check { color: var(--accent); opacity: 1; }
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
 }
 
-.content {
-    flex: 1;
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .certName {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.25s;
+  letter-spacing: 0.01em;
 }
 
-.meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+.certIssuer {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.issuer {
-    font-weight: 600;
-    color: var(--accent-purple);
-}
-
-.divider {
-    opacity: 0.3;
+.certDate {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .check {
-    color: #10b981;
-    opacity: 0.5;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #10b981;
+  opacity: 0.6;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .header { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 36px; }
+  .sub { text-align: left; max-width: none; }
+  .title { font-size: clamp(2.2rem, 7vw, 3.5rem); }
 }
 
 @media (max-width: 768px) {
-    .header {
-        margin-bottom: 48px;
-    }
+  .item { grid-template-columns: 40px 1fr auto; gap: 14px; }
+  .check { display: none; }
+  .certName { font-size: 0.9rem; }
+}
 
-    .header h2 {
-        font-size: clamp(2rem, 8vw, 2.5rem);
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .certCard {
-        padding: 20px;
-        gap: 16px;
-    }
+@media (max-width: 600px) {
+  .item { grid-template-columns: 1fr auto; gap: 12px; padding: 18px 0; }
+  .num { display: none; }
+  .certDate { font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {
-    .certCard {
-        padding: 16px;
-        gap: 12px;
-    }
-
-    .iconWrapper {
-        width: 40px;
-        height: 40px;
-    }
-
-    .certName {
-        font-size: 1rem;
-    }
-
-    .meta {
-        font-size: 0.8rem;
-    }
+  .item { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+  .certDate { display: none; }
+  .certName { font-size: 0.88rem; }
+  .header { margin-bottom: 28px; }
 }

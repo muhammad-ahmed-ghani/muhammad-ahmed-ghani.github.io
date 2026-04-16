@@ -1,102 +1,143 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ArrowDown, MapPin } from 'lucide-react';
+import TextScramble from './TextScramble';
+import AsciiGrid from './AsciiGrid';
+import { scrollToId } from '../utils/scrollStore';
 import styles from './Hero.module.css';
 
-const Hero: React.FC = () => {
-    // Basic defensive check for image
-    const profileImageUrl = "/Muhammad_ahmed_DP.webp";
+const MARQUEE = [
+  'Generative AI', '·', 'ImagineArt 2.0', '·', 'Computer Vision', '·',
+  'MLOps', '·', 'Agentic Systems', '·', 'LLMs', '·', 'Model Architecture', '·',
+  'Production AI', '·', 'Neural Networks', '·', 'PyTorch', '·', 'Stable Diffusion', '·',
+  'Generative AI', '·', 'ImagineArt 2.0', '·', 'Computer Vision', '·',
+  'MLOps', '·', 'Agentic Systems', '·', 'LLMs', '·', 'Model Architecture', '·',
+  'Production AI', '·', 'Neural Networks', '·', 'PyTorch', '·', 'Stable Diffusion', '·',
+];
 
-    const scrollToNext = () => {
-        const nextSection = document.getElementById('projects');
-        if (nextSection) {
-            // Get the element's position relative to the viewport
-            const rect = nextSection.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const targetY = rect.top + scrollTop;
-            
-            // Smooth scroll to the target position
-            window.scrollTo({
-                top: targetY,
-                behavior: 'smooth'
-            });
-        }
-    };
+const up = (delay: number) => ({
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] },
+});
 
-    return (
-        <section id="home" className={styles.hero}>
-            <div className="container">
-                <div className={styles.content}>
-                    <div className={styles.topSection}>
-                        <motion.div
-                            className={styles.reveal}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <h1 className={styles.name}>
-                                MUHAMMAD <br />
-                                <span className="text-titanium">AHMED GHANI</span>
-                            </h1>
+const Hero: React.FC = () => (
+  <section id="home" className={styles.hero}>
+    {/* Ambient ASCII grid */}
+    <div className={styles.asciiBg}><AsciiGrid /></div>
+    {/* Background watermark */}
+    <div className={styles.watermark} aria-hidden="true">AI</div>
 
-                            <div className={styles.separator} />
+    <div className={styles.outerLayout}>
+      <div className="container">
+        <div className={styles.layout}>
 
-                            <p className={styles.role}>
-                                Lead Machine Learning Engineer <br />
-                                & AI Solution Architect
-                            </p>
-                        </motion.div>
+          {/* ── Text column ────────────────────────────────── */}
+          <div className={styles.textCol}>
 
-                        <motion.div
-                            className={styles.imageContainer}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <div className={styles.imageWrapper}>
-                                <img
-                                    src={profileImageUrl}
-                                    alt="Muhammad Ahmed Ghani"
-                                    className={styles.profileImage}
-                                    onError={(e) => {
-                                        console.error("Hero: Profile image failed to load", e);
-                                    }}
-                                />
-                                <div className={styles.imageOverlay} />
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    <div className={styles.footer}>
-                        <button 
-                            className={styles.scrollHint}
-                            onClick={scrollToNext}
-                            aria-label="Scroll to next section"
-                        >
-                            <span>Enter the Odyssey</span>
-                            <motion.div
-                                animate={{ y: [0, 8, 0] }}
-                                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                            >
-                                <ChevronDown size={24} />
-                            </motion.div>
-                        </button>
-
-                        <div className={styles.stats}>
-                            <div className={styles.stat}>
-                                <strong>5+ YRS</strong>
-                                <span>Engineering</span>
-                            </div>
-                            <div className={styles.stat}>
-                                <strong>25+ PRJ</strong>
-                                <span>Deployment</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {/* Name — ASCII scramble reveal */}
+            <div className={styles.nameBlock}>
+              <div className={styles.nameRow}>
+                <TextScramble text="MUHAMMAD" delay={0.4} stagger={40} scrambleDuration={380} className={styles.nameLine} />
+              </div>
+              <div className={styles.nameRow}>
+                <TextScramble text="AHMED" delay={0.72} stagger={50} scrambleDuration={400} className={`${styles.nameLine} ${styles.nameAccent}`} />
+              </div>
+              <div className={styles.nameRow}>
+                <TextScramble text="GHANI" delay={1.0} stagger={46} scrambleDuration={390} className={styles.nameLine} />
+              </div>
             </div>
-        </section>
-    );
-};
+
+            {/* Role */}
+            <motion.div className={styles.roleBlock} {...up(1.4)}>
+              <div className={styles.roleSep} />
+              <p className={styles.role}>
+                Lead Machine Learning Engineer<br />
+                &amp; AI Solution Architect
+              </p>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div className={styles.stats} {...up(1.65)}>
+              {[
+                { n: '5+',  label: 'Years Engineering' },
+                { n: '25+', label: 'Production Projects' },
+                { n: '2M+', label: 'Users Reached' },
+              ].map((s, i) => (
+                <React.Fragment key={s.n}>
+                  {i > 0 && <div className={styles.statDiv} />}
+                  <div className={styles.stat}>
+                    <strong>{s.n}</strong>
+                    <span>{s.label}</span>
+                  </div>
+                </React.Fragment>
+              ))}
+            </motion.div>
+
+            {/* Location + CTA */}
+            <motion.div className={styles.footerRow} {...up(1.9)}>
+              <div className={styles.location}>
+                <MapPin size={13} />
+                Lahore, Pakistan
+              </div>
+              <button
+                className={styles.scrollBtn}
+                onClick={() => scrollToId('#projects')}
+                aria-label="View Work"
+              >
+                <span>View Work</span>
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+                >
+                  <ArrowDown size={14} />
+                </motion.div>
+              </button>
+            </motion.div>
+          </div>
+
+          {/* ── Image column ───────────────────────────────── */}
+          <motion.div
+            className={styles.imageCol}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className={styles.imageFrame}>
+              <div className={styles.imageGlow} />
+              <img
+                src="/Muhammad_ahmed_DP.webp"
+                alt="Muhammad Ahmed Ghani"
+                className={styles.image}
+              />
+              <div className={styles.imageOverlay} />
+              <div className={styles.scanlines} aria-hidden="true" />
+            </div>
+            {/* Corner brackets */}
+            <div className={`${styles.corner} ${styles.cornerTL}`} />
+            <div className={`${styles.corner} ${styles.cornerBR}`} />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Marquee ticker */}
+      <motion.div
+        className={styles.marqueeWrap}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2.1 }}
+        aria-hidden="true"
+      >
+        <div className="marquee-track">
+          {MARQUEE.map((item, i) => (
+            <span key={i} className={item === '·' ? styles.marqueeDot : styles.marqueeItem}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default Hero;
