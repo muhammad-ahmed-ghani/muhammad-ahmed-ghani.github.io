@@ -8,11 +8,14 @@
 /* ── Shell ────────────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  /* svh, not vh: on mobile browsers 100vh is the *largest* viewport height,
+     so the hero ran taller than the visible area and pushed the CTA and
+     marquee under the browser chrome. */
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
   z-index: 2;
 }
 
@@ -50,6 +53,11 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 0;
+  /* Both required. In a column flex container the cross-axis size resolves
+     from the widest child, and overflow:hidden on .marqueeWrap clips the
+     paint but not the intrinsic max-content width it contributes. */
+  width: 100%;
+  min-width: 0;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -80,9 +88,16 @@
 /* ── Name block ───────────────────────────────────────── */
 .nameBlock {
   margin-bottom: 24px;
+  /* Reset the global h1 rules — the sizing lives on .nameLine. */
+  display: block;
+  font-size: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  text-wrap: initial;
 }
 
 .nameRow {
+  display: block;
   line-height: 0.88;
 }
 
@@ -231,7 +246,7 @@
   top: 88px;
   right: 0;
   width: clamp(240px, 26vw, 390px);
-  height: clamp(300px, calc(100vh - 220px), 580px);
+  height: clamp(300px, calc(100svh - 220px), 580px);
 }
 
 .imageFrame {
@@ -298,6 +313,8 @@
 /* ── Marquee ──────────────────────────────────────────── */
 .marqueeWrap {
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
   border-top: 1px solid var(--border);
   padding: 11px 0;
   background: rgba(5,5,5,0.7);
@@ -428,4 +445,16 @@
 @media (max-width: 360px) {
   .imageCol { height: 140px; }
   .layout { padding-top: 62px; }
+}
+
+/* Scroll-cue arrow. CSS rather than a JS animation loop, so the global
+   prefers-reduced-motion rule switches it off for free. */
+@keyframes heroBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+.bounce {
+  display: inline-flex;
+  animation: heroBounce 2.2s ease-in-out infinite;
 }

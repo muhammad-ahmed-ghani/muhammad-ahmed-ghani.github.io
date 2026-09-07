@@ -17,13 +17,13 @@ const Footer: React.FC = () => {
         {/* CTA Block */}
         <div className={styles.cta}>
           <div className="section-label">
-            <span className="section-number">05</span>
+            <span className="section-number">07</span>
             Get In Touch
           </div>
 
           <h2 className={styles.ctaHeading}>
-            Let's architect<br />
-            <span className="text-titanium">the future of AI.</span>
+            Let&apos;s work{' '}<br />
+            <span className="text-titanium">together.</span>
           </h2>
 
           <div className={styles.ctaActions}>
@@ -34,14 +34,21 @@ const Footer: React.FC = () => {
               className={styles.btnPrimary}
             >
               <Calendar size={18} />
-              Book a Consultation
+              Book a call
             </a>
             <a
               href={`mailto:${portfolioData.personal.email}`}
               className={styles.btnSecondary}
             >
               {portfolioData.personal.email}
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a
+              href={`mailto:${portfolioData.personal.personalEmail}`}
+              className={styles.btnSecondary}
+            >
+              {portfolioData.personal.personalEmail}
+              <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -58,7 +65,7 @@ const Footer: React.FC = () => {
 
           <nav className={styles.nav}>
             <div className={styles.navGroup}>
-              <h4 className={styles.navHeading}>Navigate</h4>
+              <h3 className={styles.navHeading}>Navigate</h3>
               {[
                 { label: 'Home', href: '#home' },
                 { label: 'Work', href: '#projects' },
@@ -72,7 +79,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className={styles.navGroup}>
-              <h4 className={styles.navHeading}>Connect</h4>
+              <h3 className={styles.navHeading}>Connect</h3>
               <a href={portfolioData.personal.socials.linkedin} target="_blank" rel="noopener noreferrer" className={styles.navLink}>
                 <Linkedin size={14} /> LinkedIn
               </a>
@@ -91,7 +98,7 @@ const Footer: React.FC = () => {
           <p>&copy; {new Date().getFullYear()} Muhammad Ahmed Ghani</p>
           <div className={styles.status}>
             <span className={styles.statusDot} />
-            Available for Global Collaboration
+            Open to new work
           </div>
         </div>
       </div>

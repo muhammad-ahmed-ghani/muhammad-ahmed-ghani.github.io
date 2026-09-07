@@ -1,18 +1,21 @@
 export const portfolioData = {
     personal: {
         name: "Muhammad Ahmed Ghani",
-        role: "Lead Machine Learning Engineer & AI Solution Architect",
+        role: "AI Research Lead & Machine Learning Lead at ImagineArt",
         image: "/Muhammad_ahmed_DP.webp",
-        email: "i.am.a.pakistani.programmer@gmail.com",
+        email: "muhammad.ahmed@imagine.art",
+        personalEmail: "i.am.a.pakistani.programmer@gmail.com",
         phone: "+92 301 4902083",
-        location: "Lahore, Pakistan",
-        tagline: "Architecting the future of Generative AI and Agentic Systems.",
-        summary: "AI Solution Architect with 5+ years building production-grade AI at global scale. Creator of ImagineArt 2.0 — the world's most realistic text-to-image model. Expert in Generative AI, Computer Vision, and MLOps. Delivered 25+ high-impact production products used by millions worldwide.",
+        location: "Islamabad, Pakistan",
+        tagline: "Generative image, video and speech models — research through to production.",
+        summary: "AI Research Lead and Machine Learning Lead at ImagineArt, directing the model programme behind ImagineArt 2.0, 1.5 Pro and 1.5 — text-to-image models built for photorealism and accurate text rendering. Works across image, video, speech and agentic systems, taking research from first experiment through to production inference.",
         socials: {
             github: "https://github.com/muhammad-ahmed-ghani",
             linkedin: "https://www.linkedin.com/in/ahmedghani/",
-            twitter: "https://twitter.com/muhammad_ahmed_ghani",
-            instagram: "https://instagram.com/muhammad_ahmed_ghani",
+            twitter: "https://x.com/_ahmedghani",
+            huggingface: "https://huggingface.co/ahmedghani",
+            producthunt: "https://www.producthunt.com/@muhammad_ahmed_ghani",
+            instagram: "https://instagram.com/_ahmedghani",
             whatsapp: "https://wa.me/923014902083",
             calendly: "https://calendly.com/muhammad-ahmad-ghani/30min"
         }
@@ -23,11 +26,11 @@ export const portfolioData = {
             role: "Machine Learning Lead",
             period: "Sep 2024 – Present",
             details: [
-                "Led the architecture and training of ImagineArt 2.0 — achieving state-of-the-art photorealism and text rendering, surpassing all prior benchmarks.",
-                "Built ImagineArt 1.5, the industry-leading text-to-image model, with a team of 7 ML engineers.",
+                "Led architecture and training for ImagineArt 2.0, focused on photorealism and text rendering.",
+                "Built ImagineArt 1.5, a text-to-image model, with a team of seven ML engineers.",
                 "Architected Chatly/Everask Agentic AI solutions utilizing GPT-4o, Gemini 1.5 Pro, and Claude 3.5.",
-                "Pioneered Imagine Shorts (AI Video Shorts) for automated cinematic content creation.",
-                "Developed Imagine Avatars — world-class high-fidelity AI persona generation and animation."
+                "Built Imagine Shorts for automated video generation from text prompts.",
+                "Developed Imagine Avatars for AI persona generation and animation."
             ]
         },
         {
@@ -35,9 +38,9 @@ export const portfolioData = {
             role: "Sr. ML Engineer",
             period: "Mar 2024 – Aug 2024",
             details: [
-                "Optimized model infrastructure for dynamic CPU/GPU switching, reducing operational costs by 40%.",
+                "Optimised model infrastructure for dynamic CPU/GPU switching, reducing operational cost by about 40%.",
                 "Developed Saaz — a singing voice cloning product with real-time inference capabilities.",
-                "Built professional-grade AI Product Photography with sub-2s inference and production-ready pipelines."
+                "Built AI product photography with sub-2s inference and production pipelines."
             ]
         },
         {
@@ -72,7 +75,7 @@ export const portfolioData = {
     education: {
         university: "University Of Central Punjab",
         degree: "Bachelor of Science in Computer Science",
-        period: "2018 – 2022",
+        period: "F18",
         location: "Lahore, Pakistan",
         cgpa: "3.52/4.00",
         details: [
@@ -110,7 +113,7 @@ export const portfolioData = {
             id: "P.001",
             title: "ImagineArt 2.0",
             category: "Generative AI",
-            description: "The world's most realistic text-to-image model. State-of-the-art photorealism, flawless text rendering, and unmatched creative control at production scale.",
+            description: "Text-to-image model built for photorealism and accurate text rendering at production scale. Led its architecture and training.",
             link: "https://www.imagine.art/image?modelListId=69",
             featured: true
         },
@@ -118,7 +121,7 @@ export const portfolioData = {
             id: "P.002",
             title: "ImagineArt 1.5",
             category: "Generative AI",
-            description: "The global standard for photorealistic image synthesis. Led a team of 7 to achieve industry-leading benchmark scores.",
+            description: "Photorealistic text-to-image model, built with a team of seven ML engineers.",
             link: "https://www.imagine.art/image?modelListId=15",
             featured: false
         },
@@ -126,7 +129,7 @@ export const portfolioData = {
             id: "P.003",
             title: "Imagine Shorts",
             category: "Video Generation",
-            description: "AI-automated cinematic video creation for professional studios — from single text prompt to broadcast-ready content.",
+            description: "Automated video generation, from a single text prompt through to a finished cut.",
             link: "https://www.shorts.imagine.art/dashboard",
             featured: false
         },
@@ -134,7 +137,7 @@ export const portfolioData = {
             id: "P.004",
             title: "Imagine Avatars",
             category: "Computer Vision",
-            description: "High-fidelity AI persona generation and animation. Real-time inference, sub-second rendering, production-grade fidelity.",
+            description: "AI persona generation and animation, with real-time inference and sub-second rendering.",
             link: "https://www.imagine.art/dashboard/avatars",
             featured: false
         },
@@ -142,7 +145,7 @@ export const portfolioData = {
             id: "P.005",
             title: "Chatly AI",
             category: "Agentic NLP",
-            description: "State-of-the-art multi-agent AI system integrating GPT-4o, Claude 3.5, and Gemini for enterprise-grade conversational intelligence.",
+            description: "Multi-agent conversational system integrating GPT-4o, Claude 3.5 and Gemini.",
             link: "https://chatlyai.app/",
             featured: false
         }

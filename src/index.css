@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap');
+/*
+ * Fonts are loaded from a single non-blocking <link> in index.html.
+ * The @import that used to sit here was the worst possible path: a bundled
+ * CSS @import serialises HTML -> CSS -> font CSS -> font files before first
+ * paint, and it duplicated the <link> already in the document head.
+ */
 
 :root {
   /* Core Palette */
@@ -9,8 +14,11 @@
 
   /* Typography */
   --text-primary: #F2F2F2;
-  --text-secondary: #777;
-  --text-dim: #333;
+  --text-secondary: #8A8A8A;
+  /* #333 measured 1.61:1 on the #050505 ground — far below the 4.5:1 WCAG AA
+     floor, and it is used for real 10-11px text (cert issuers, footer
+     headings, the copyright line). #7A7A7A measures 4.75:1. */
+  --text-dim: #7A7A7A;
 
   /* Accent — Electric Cyan */
   --accent: #00C4FF;
@@ -27,9 +35,9 @@
   --glass-blur: blur(24px);
 
   /* Fonts */
-  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-display: 'Syne', 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Syne', 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Transitions */
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -37,6 +45,10 @@
   --transition-fast: 0.25s var(--ease-smooth);
   --transition-normal: 0.45s var(--ease-smooth);
   --transition-ultra: 0.9s var(--ease-expo);
+
+  /* Fluid rhythm — scales continuously instead of stepping at breakpoints */
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --section-gap: clamp(3.5rem, 10vw, 7.5rem);
 
   /* Legacy aliases */
   --bg-color: var(--bg);
@@ -54,16 +66,31 @@
 }
 
 html {
-  scroll-behavior: auto;
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  /* Anchors land below the fixed navbar instead of underneath it. */
+  scroll-padding-top: 88px;
 }
 
 html, body {
   background-color: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 1.55;
+  /* overflow-x:hidden on <html> silently breaks position:sticky in some
+     engines; clipping on <body> alone is enough to contain stray overflow. */
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100svh;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -74,43 +101,112 @@ a {
 
 button, a, input, select, textarea {
   -webkit-tap-highlight-color: transparent;
+  font: inherit;
 }
 
-button, a[role="button"] {
+/* Visible keyboard focus. The design has no focus styling of its own, which
+   left keyboard users with no indication of position at all. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Comfortable touch targets — scoped to real controls. The previous rule
+   applied min-width:44px to every <a>, which stretched inline text links. */
+button,
+a[role="button"],
+nav a,
+footer a {
   min-height: 44px;
-  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  button, a[role="button"] { min-height: 48px; }
+/* Visually hidden but present for assistive tech and crawlers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* ─── Typography ─────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+/* ─── Layering ───────────────────────────────────────────────
+   The WebGL scene is a backdrop. Content scrolls natively above it. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--bg);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Typography ─────────────────────────────────────────────
+   Fluid sizing so headings scale continuously from 320px to 1440px+
+   rather than jumping at each breakpoint. */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
-/* Display headings use Syne */
-h1, h2 {
-  font-family: var(--font-display);
-}
+h1, h2 { font-family: var(--font-display); }
+h1 { font-size: clamp(2.5rem, 9vw, 6rem); line-height: 0.95; }
+h2 { font-size: clamp(2rem, 6vw, 4rem); line-height: 1.02; }
+h3 { font-size: clamp(1.15rem, 2.6vw, 1.75rem); line-height: 1.2; }
 
-/* Gradient text — white to muted */
+p { text-wrap: pretty; overflow-wrap: break-word; }
+
+/* A single long word ("Certifications") cannot wrap, so at narrow widths it
+   has to be allowed to shrink or break rather than run past the gutter. */
+h1, h2, h3 { max-width: 100%; }
+
 .text-titanium {
   background: linear-gradient(175deg, #fff 0%, #888 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-/* Cyan gradient text */
 .text-cyan {
   background: linear-gradient(135deg, #00C4FF 0%, #0080FF 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* ─── Section Labels ─────────────────────────────────────── */
@@ -119,17 +215,17 @@ h1, h2 {
   align-items: center;
   gap: 16px;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: clamp(0.6rem, 1.4vw, 0.7rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 48px;
+  margin-bottom: clamp(1.75rem, 5vw, 3rem);
 }
 
 .section-label::before {
   content: '';
   display: block;
-  width: 40px;
+  width: clamp(20px, 5vw, 40px);
   height: 1px;
   background: var(--border-bright);
   flex-shrink: 0;
@@ -138,7 +234,6 @@ h1, h2 {
 .section-number {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
 
@@ -154,50 +249,38 @@ h1, h2 {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding-inline: var(--gutter);
   width: 100%;
 }
 
 section {
-  min-height: 100vh;
-  padding: 120px 0;
+  padding-block: var(--section-gap);
   position: relative;
-  z-index: 10;
   background: transparent;
 }
 
-@media (max-width: 1200px) {
-  .container { padding: 0 40px; }
-  section { padding: 100px 0; }
-}
-
-@media (max-width: 1024px) {
-  .container { padding: 0 32px; }
-  section { padding: 88px 0; }
-}
-
-@media (max-width: 768px) {
-  .container { padding: 0 20px; }
-  section { padding: 64px 0; min-height: auto; }
-  .section-label { margin-bottom: 28px; font-size: 0.6rem; }
-}
-
-@media (max-width: 480px) {
-  .container { padding: 0 16px; }
-  section { padding: 48px 0; }
-}
-
-@media (max-width: 360px) {
-  .container { padding: 0 12px; }
+/* Only the hero fills the viewport, and it uses svh so mobile browser
+   chrome cannot push content off-screen the way 100vh does. Every other
+   section is sized by its content — the old min-height:100vh on all of
+   them forced six viewports of largely empty page. */
+section#home {
+  /* No display:flex here. As a row flex container it made .hero a flex item
+     whose width resolved from content — and the max-content width of the
+     marquee track (~3000px) then defined the whole hero, dragging the
+     centred .container off the left edge. */
+  min-height: 100svh;
+  padding-block: 0;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
-::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; opacity: 0.4; }
-
-/* ─── Performance ────────────────────────────────────────── */
-.gpu { transform: translateZ(0); will-change: transform, opacity; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 196, 255, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+html { scrollbar-width: thin; scrollbar-color: rgba(0,196,255,0.4) #000; }
 
 /* ─── Marquee ────────────────────────────────────────────── */
 @keyframes marquee {
@@ -210,8 +293,72 @@ section {
   gap: 0;
   animation: marquee 28s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ─── Reduced motion ─────────────────────────────────────────
+   Honours the OS setting rather than animating regardless. */
+/* Windows High Contrast and forced-colors modes drop background images,
+   which would leave gradient-clipped headings with transparent fill and
+   therefore invisible. Restore a solid colour there. */
+@media (forced-colors: active) {
+  .text-titanium,
+  .text-cyan {
+    -webkit-text-fill-color: currentColor;
+    color: CanvasText;
+    background: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track { animation: none; transform: none; }
+}
+
+/* ─── Scroll reveal ──────────────────────────────────────────
+   Content is visible by default. The hidden state only exists once
+   useReveal() has put `js-reveal` on <html>, which it does only when
+   IntersectionObserver is available and motion is not reduced.
+
+   This is deliberate: the page is prerendered, so a default-hidden
+   state would serve a blank page to every non-JS crawler. */
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+html.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.85s var(--ease-expo) var(--reveal-delay, 0s),
+    transform 0.85s var(--ease-expo) var(--reveal-delay, 0s);
+  /* No will-change here. It promotes every not-yet-revealed element on the
+     page to its own layer simultaneously, which costs far more memory than
+     the compositing saves — and there are 50+ of them. */
+}
+
+html.js-reveal [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

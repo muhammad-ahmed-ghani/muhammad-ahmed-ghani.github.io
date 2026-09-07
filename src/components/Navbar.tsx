@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { scrollToId } from '../utils/scrollStore';
 import styles from './Navbar.module.css';
 
 const navItems = [
+  { name: 'About', href: '#about' },
   { name: 'Work', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Timeline', href: '#experience' },
@@ -17,33 +17,32 @@ const Navbar: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Listen on the drei scroll element if captured, else window
-    const getScrollEl = () =>
-      (window as any).__scrollEl as HTMLElement | null;
+    // Previously this polled every 200ms for the drei ScrollControls element on
+    // window.__scrollEl. The page scrolls natively now, so read the document
+    // directly and coalesce updates into one rAF per frame.
+    let frame = 0;
 
-    const onScroll = (e: Event) => {
-      const el = e.currentTarget as HTMLElement;
-      const scrollTop = el.scrollTop ?? window.scrollY;
-      const docHeight = el.scrollHeight - el.clientHeight;
-      setScrolled(scrollTop > 40);
-      setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+    const read = () => {
+      frame = 0;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      setScrolled(window.scrollY > 40);
+      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
     };
 
-    // Poll until the drei scroll element is available
-    let attempts = 0;
-    const poll = setInterval(() => {
-      const el = getScrollEl();
-      if (el) {
-        el.addEventListener('scroll', onScroll, { passive: true });
-        clearInterval(poll);
-      }
-      if (++attempts > 40) clearInterval(poll);
-    }, 200);
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(read);
+    };
+
+    read();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
 
     return () => {
-      clearInterval(poll);
-      const el = getScrollEl();
-      if (el) el.removeEventListener('scroll', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, []);
 
@@ -54,14 +53,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <motion.nav
+    <nav
       className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      aria-label="Primary"
     >
       {/* Scroll progress bar */}
-      <div className={styles.progressBar} style={{ width: `${progress}%` }} />
+      <div className={styles.progressBar} aria-hidden="true" style={{ width: `${progress}%` }} />
 
       <div className={styles.inner}>
         <a
@@ -73,7 +70,7 @@ const Navbar: React.FC = () => {
           <span className={styles.accentDot}>.</span>G
         </a>
 
-        <ul className={`${styles.links} ${open ? styles.linksOpen : ''}`}>
+        <ul id="primary-navigation" className={`${styles.links} ${open ? styles.linksOpen : ''}`}>
           {navItems.map((item, i) => (
             <li key={item.name}>
               <a
@@ -106,7 +103,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useEnvironment } from '../hooks/useEnvironment';
 
 // Characters to use in the grid — mix of binary, hex, symbols, block chars
 const CHARS = '01アイウエカキ![]{}|/<>+=-_01ABCDEF01░▒▓01▪■□01<>{}[]01';
@@ -17,10 +18,18 @@ interface Props {
 
 const AsciiGrid: React.FC<Props> = ({ className }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const env = useEnvironment();
+
+  // Purely decorative, and it drives a permanent ~20fps canvas repaint. Not
+  // worth the battery on phones, and it must not run under reduced motion.
+  const enabled = env.ready && !env.reducedMotion && !env.coarsePointer;
 
   useEffect(() => {
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext('2d')!;
+    if (!enabled) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     const CELL = 30; // px per grid cell
     let cols = 0;
@@ -40,8 +49,12 @@ const AsciiGrid: React.FC<Props> = ({ className }) => {
     };
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      // Scale the backing store by DPR, otherwise the glyphs are resampled
+      // and look soft on every retina display.
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(canvas.offsetWidth * dpr);
+      canvas.height = Math.floor(canvas.offsetHeight * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       buildGrid();
     };
 
@@ -50,8 +63,10 @@ const AsciiGrid: React.FC<Props> = ({ className }) => {
     resize();
 
     const FONT_SIZE = Math.floor(CELL * 0.52);
-    let frame = 0;
-    let animId: number;
+    // Both handles are needed: the loop alternates setTimeout -> rAF, so
+    // cancelling only the timeout left a frame callback still queued.
+    let timeoutId: number | undefined;
+    let rafId: number | undefined;
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -90,18 +105,22 @@ const AsciiGrid: React.FC<Props> = ({ className }) => {
         );
       });
 
-      frame++;
       // Throttle to ~20 fps to preserve GPU budget for Three.js
-      animId = window.setTimeout(() => requestAnimationFrame(draw), 50);
+      timeoutId = window.setTimeout(() => {
+        rafId = requestAnimationFrame(draw);
+      }, 50);
     };
 
     draw();
 
     return () => {
-      clearTimeout(animId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+      if (rafId !== undefined) cancelAnimationFrame(rafId);
       ro.disconnect();
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <canvas

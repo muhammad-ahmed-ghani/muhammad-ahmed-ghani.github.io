@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowDown, MapPin } from 'lucide-react';
 import TextScramble from './TextScramble';
 import AsciiGrid from './AsciiGrid';
+import { portfolioData } from '../data/portfolio';
 import { scrollToId } from '../utils/scrollStore';
 import styles from './Hero.module.css';
 
@@ -14,12 +14,6 @@ const MARQUEE = [
   'MLOps', '·', 'Agentic Systems', '·', 'LLMs', '·', 'Model Architecture', '·',
   'Production AI', '·', 'Neural Networks', '·', 'PyTorch', '·', 'Stable Diffusion', '·',
 ];
-
-const up = (delay: number) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] },
-});
 
 const Hero: React.FC = () => (
   <section id="home" className={styles.hero}>
@@ -36,29 +30,31 @@ const Hero: React.FC = () => (
           <div className={styles.textCol}>
 
             {/* Name — ASCII scramble reveal */}
-            <div className={styles.nameBlock}>
-              <div className={styles.nameRow}>
+            {/* The page's single h1. It carries the full name as real text so
+                it is the first and strongest term any crawler reads. */}
+            <h1 className={styles.nameBlock}>
+              <span className={styles.nameRow}>
                 <TextScramble text="MUHAMMAD" delay={0.4} stagger={40} scrambleDuration={380} className={styles.nameLine} />
-              </div>
-              <div className={styles.nameRow}>
+              </span>{' '}
+              <span className={styles.nameRow}>
                 <TextScramble text="AHMED" delay={0.72} stagger={50} scrambleDuration={400} className={`${styles.nameLine} ${styles.nameAccent}`} />
-              </div>
-              <div className={styles.nameRow}>
+              </span>{' '}
+              <span className={styles.nameRow}>
                 <TextScramble text="GHANI" delay={1.0} stagger={46} scrambleDuration={390} className={styles.nameLine} />
-              </div>
-            </div>
+              </span>
+            </h1>
 
             {/* Role */}
-            <motion.div className={styles.roleBlock} {...up(1.4)}>
+            <div className={styles.roleBlock}>
               <div className={styles.roleSep} />
               <p className={styles.role}>
-                Lead Machine Learning Engineer<br />
-                &amp; AI Solution Architect
+                AI Research Lead<br />
+                &amp; Machine Learning Lead at ImagineArt
               </p>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div className={styles.stats} {...up(1.65)}>
+            <div className={styles.stats}>
               {[
                 { n: '5+',  label: 'Years Engineering' },
                 { n: '25+', label: 'Production Projects' },
@@ -72,43 +68,41 @@ const Hero: React.FC = () => (
                   </div>
                 </React.Fragment>
               ))}
-            </motion.div>
+            </div>
 
             {/* Location + CTA */}
-            <motion.div className={styles.footerRow} {...up(1.9)}>
+            <div className={styles.footerRow}>
               <div className={styles.location}>
-                <MapPin size={13} />
-                Lahore, Pakistan
+                <MapPin size={13} aria-hidden="true" />
+                {portfolioData.personal.location}
               </div>
-              <button
+              {/* An anchor, not a button: crawlers follow href, and it works
+                  with JavaScript disabled. */}
+              <a
                 className={styles.scrollBtn}
-                onClick={() => scrollToId('#projects')}
-                aria-label="View Work"
+                href="#projects"
+                onClick={(e) => { e.preventDefault(); scrollToId('#projects'); }}
               >
                 <span>View Work</span>
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
-                >
+                <span className={styles.bounce} aria-hidden="true">
                   <ArrowDown size={14} />
-                </motion.div>
-              </button>
-            </motion.div>
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* ── Image column ───────────────────────────────── */}
-          <motion.div
-            className={styles.imageCol}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div className={styles.imageCol}>
             <div className={styles.imageFrame}>
               <div className={styles.imageGlow} />
               <img
                 src="/Muhammad_ahmed_DP.webp"
-                alt="Muhammad Ahmed Ghani"
+                alt="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt"
                 className={styles.image}
+                width={1024}
+                height={1024}
+                fetchPriority="high"
+                decoding="async"
               />
               <div className={styles.imageOverlay} />
               <div className={styles.scanlines} aria-hidden="true" />
@@ -116,18 +110,12 @@ const Hero: React.FC = () => (
             {/* Corner brackets */}
             <div className={`${styles.corner} ${styles.cornerTL}`} />
             <div className={`${styles.corner} ${styles.cornerBR}`} />
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Marquee ticker */}
-      <motion.div
-        className={styles.marqueeWrap}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2.1 }}
-        aria-hidden="true"
-      >
+      <div className={styles.marqueeWrap} aria-hidden="true">
         <div className="marquee-track">
           {MARQUEE.map((item, i) => (
             <span key={i} className={item === '·' ? styles.marqueeDot : styles.marqueeItem}>
@@ -135,7 +123,7 @@ const Hero: React.FC = () => (
             </span>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   </section>
 );

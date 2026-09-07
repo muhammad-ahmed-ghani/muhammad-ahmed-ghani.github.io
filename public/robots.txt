@@ -1,41 +1,69 @@
-# Robots.txt for ahmedghani.com
-# Muhammad Ahmed Ghani - Lead Machine Learning Engineer Portfolio
+# robots.txt — ahmedghani.com
+# Muhammad Ahmed Ghani — AI Research Lead & Machine Learning Lead, ImagineArt
+# Contact: muhammad.ahmed@imagine.art
+# Last reviewed: 2026-09-07
+#
+# Posture: fully open. The page is prerendered to static HTML at build time,
+# so every crawler below can read the full content without executing
+# JavaScript. Token matching is case-insensitive per RFC 9309 §2.2.1; the
+# casing here follows each vendor's own documentation.
 
 User-agent: *
 Allow: /
-Disallow: /terminals/
-Disallow: /*.json$
 
-# Specific bot rules
+# ── Search engines ───────────────────────────────────────────────
 User-agent: Googlebot
-Allow: /
-
 User-agent: Googlebot-Image
-Allow: /images/
-
-User-agent: Bingbot
+User-agent: GoogleOther
+User-agent: bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
 Allow: /
 
-User-agent: GPTBot
+# ── AI answer engines: live retrieval and citation ───────────────
+# These decide whether this site is cited in an AI-generated answer.
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
 Allow: /
 
+# ── AI assistants: user-triggered fetches ────────────────────────
+# Fired when a person asks an assistant something that needs this page.
 User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: meta-externalfetcher
 Allow: /
 
+# ── Foundation-model training ────────────────────────────────────
+# Google-Extended governs Gemini/Vertex training only — it does not
+# control AI Overviews, which follow Googlebot.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
 User-agent: CCBot
+User-agent: AI2Bot
+User-agent: Bytespider
 Allow: /
 
-User-agent: anthropic-ai
+# ── Aggregators and data providers ───────────────────────────────
+User-agent: YouBot
+User-agent: Diffbot
+User-agent: Timpibot
+User-agent: ImagesiftBot
 Allow: /
 
-User-agent: Claude-Web
+# ── Social link previews ─────────────────────────────────────────
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Slackbot-LinkExpanding
+User-agent: WhatsApp
 Allow: /
 
-# Sitemap
+# A plain-text summary for LLM agents lives at /llms.txt
 Sitemap: https://ahmedghani.com/sitemap.xml
-
-# Crawl-delay for politeness
-Crawl-delay: 1
-
-# Host preference
-Host: https://ahmedghani.com

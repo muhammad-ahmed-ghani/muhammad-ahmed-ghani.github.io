@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import styles from './Experience.module.css';
 
@@ -8,24 +7,22 @@ const Experience: React.FC = () => {
     <section id="experience" className={styles.section}>
       <div className="container">
         <div className="section-label">
-          <span className="section-number">03</span>
+          <span className="section-number">04</span>
           Career Path
         </div>
 
         <div className={styles.header}>
-          <h2 className={`text-titanium ${styles.title}`}>The Timeline</h2>
-          <p className={styles.sub}>Architecting precision at scale.</p>
+          <h2 className={`text-titanium ${styles.title}`}>Experience</h2>
+          <p className={styles.sub}>Where the work has happened.</p>
         </div>
 
         <div className={styles.timeline}>
           {portfolioData.experience.slice(0, 3).map((exp, index) => (
-            <motion.div
+            <div
               key={`${exp.company}-${index}`}
               className={styles.item}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              data-reveal
+              style={{ '--reveal-delay': `${Math.min(index * 0.08, 0.24)}s` } as React.CSSProperties}
             >
               {/* Index number */}
               <div className={styles.itemNum}>0{index + 1}</div>
@@ -48,7 +45,7 @@ const Experience: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

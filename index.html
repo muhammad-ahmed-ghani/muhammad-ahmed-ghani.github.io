@@ -3,149 +3,181 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <!-- ═══════════════════════════════════════════════════════
-       PRIMARY SEO
+       PRIMARY
   ════════════════════════════════════════════════════════ -->
-  <title>Muhammad Ahmed Ghani — ML Engineer, Pakistan | Creator of ImagineArt 2.0</title>
-
-  <meta name="title"
-    content="Muhammad Ahmed Ghani — ML Engineer, Pakistan | Creator of ImagineArt 2.0" />
-
+  <title>Muhammad Ahmed Ghani — AI Research Lead at ImagineArt | Generative AI &amp; ML</title>
   <meta name="description"
-    content="Lead ML Engineer from Pakistan. Creator of ImagineArt 2.0, ImagineArt 1.5 & ImagineArt 1.5 Pro — world's most realistic AI image models. AI Solution Architect with 5+ years and 2M+ users globally." />
-
-  <meta name="keywords"
-    content="Muhammad Ahmed Ghani, ML Engineer Pakistan, Machine Learning Engineer Pakistan, ImagineArt 2.0, ImagineArt 1.5, ImagineArt 1.5 Pro, ImagineArt creator, AI engineer Pakistan, Generative AI, AI Solution Architect, Lead ML Engineer, deep learning Pakistan, Lahore AI engineer, Vyro AI, ImagineArt model, text to image AI Pakistan, stable diffusion engineer, LLM engineer, MLOps engineer" />
-
+    content="Muhammad Ahmed Ghani is an AI Research Lead and Machine Learning Lead at ImagineArt, directing the model programme behind ImagineArt 2.0, 1.5 Pro and 1.5. Generative image and video models, speech systems and agentic AI — research through to production." />
   <meta name="author" content="Muhammad Ahmed Ghani" />
-  <meta name="robots"
-    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="language" content="English" />
-  <meta name="revisit-after" content="7 days" />
-  <meta name="rating" content="General" />
-  <meta name="category" content="Technology, Artificial Intelligence, Machine Learning" />
-
-  <!-- Canonical — always point to the custom domain -->
   <link rel="canonical" href="https://ahmedghani.com/" />
 
-  <!-- Identity signals -->
-  <link rel="author" href="https://ahmedghani.com/" />
+  <!--
+    No <meta name="keywords">. Google has ignored it since 2009 and Bing treats
+    stuffing as a negative signal. Topical relevance comes from the visible
+    copy, the headings, and the Person.knowsAbout array in the JSON-LD below.
+  -->
+  <meta name="robots"
+    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Identity — these back the sameAs graph and let engines reconcile profiles -->
   <link rel="me" href="https://www.linkedin.com/in/ahmedghani/" />
   <link rel="me" href="https://github.com/muhammad-ahmed-ghani" />
-  <link rel="me" href="https://twitter.com/muhammad_ahmed_ghani" />
+  <link rel="me" href="https://huggingface.co/ahmedghani" />
+  <link rel="me" href="https://x.com/_ahmedghani" />
+
+  <!-- Plain-text summary for LLM agents -->
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="llms.txt" />
+
+  <!-- Geographic -->
+  <meta name="geo.region" content="PK-IS" />
+  <meta name="geo.placename" content="Islamabad, Pakistan" />
+  <meta name="geo.position" content="33.6844;73.0479" />
+  <meta name="ICBM" content="33.6844, 73.0479" />
 
   <!-- ═══════════════════════════════════════════════════════
-       GEOGRAPHIC / LOCAL SEO (Pakistan · Lahore)
-  ════════════════════════════════════════════════════════ -->
-  <meta name="geo.region" content="PK-PB" />
-  <meta name="geo.placename" content="Lahore, Punjab, Pakistan" />
-  <meta name="geo.position" content="31.5204;74.3587" />
-  <meta name="ICBM" content="31.5204, 74.3587" />
-
-  <!-- ═══════════════════════════════════════════════════════
-       OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Slack…)
+       OPEN GRAPH / TWITTER
+       og-cover.png is a real 1200x630. The portrait is 1024x1024 and was
+       previously declared as 1200x630, which cropped badly on every platform.
   ════════════════════════════════════════════════════════ -->
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Muhammad Ahmed Ghani" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://ahmedghani.com/" />
-  <meta property="og:title"
-    content="Muhammad Ahmed Ghani — ML Engineer, Pakistan | Creator of ImagineArt 2.0" />
+  <meta property="og:title" content="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt" />
   <meta property="og:description"
-    content="Lead ML Engineer from Pakistan. Creator of ImagineArt 2.0, ImagineArt 1.5 & ImagineArt 1.5 Pro — world's most realistic AI image models. AI Solution Architect, 5+ years, 2M+ users globally." />
-  <meta property="og:image"
-    content="https://ahmedghani.com/Muhammad_ahmed_DP.webp" />
-  <meta property="og:image:alt"
-    content="Muhammad Ahmed Ghani — ML Engineer and AI Solution Architect from Pakistan" />
+    content="AI Research Lead and Machine Learning Lead at ImagineArt. Generative image and video models, speech systems and agentic AI — research through to production." />
+  <meta property="og:image" content="https://ahmedghani.com/og-cover.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
-  <!-- OG Profile extras -->
+  <meta property="og:image:alt"
+    content="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt" />
   <meta property="profile:first_name" content="Muhammad Ahmed" />
   <meta property="profile:last_name" content="Ghani" />
   <meta property="profile:username" content="muhammad-ahmed-ghani" />
 
-  <!-- ═══════════════════════════════════════════════════════
-       TWITTER / X CARD
-  ════════════════════════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@muhammad_ahmed_ghani" />
-  <meta name="twitter:creator" content="@muhammad_ahmed_ghani" />
-  <meta name="twitter:url" content="https://ahmedghani.com/" />
-  <meta name="twitter:title"
-    content="Muhammad Ahmed Ghani — ML Engineer, Pakistan | ImagineArt 2.0 Creator" />
+  <meta name="twitter:site" content="@_ahmedghani" />
+  <meta name="twitter:creator" content="@_ahmedghani" />
+  <meta name="twitter:title" content="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt" />
   <meta name="twitter:description"
-    content="Lead ML Engineer from Pakistan. Creator of ImagineArt 2.0, ImagineArt 1.5 & 1.5 Pro — world's most realistic AI image models. 5+ years, 2M+ users." />
-  <meta name="twitter:image"
-    content="https://ahmedghani.com/Muhammad_ahmed_DP.webp" />
-  <meta name="twitter:image:alt"
-    content="Muhammad Ahmed Ghani — ML Engineer from Pakistan, Creator of ImagineArt 2.0" />
+    content="AI Research Lead and Machine Learning Lead at ImagineArt. Generative image and video models, speech systems and agentic AI." />
+  <meta name="twitter:image" content="https://ahmedghani.com/og-cover.png" />
+  <meta name="twitter:image:alt" content="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt" />
 
   <!-- ═══════════════════════════════════════════════════════
-       PWA / MOBILE
+       PWA / ICONS
   ════════════════════════════════════════════════════════ -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#050505" />
   <meta name="color-scheme" content="dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="M.A.G" />
+  <meta name="apple-mobile-web-app-title" content="Ahmed Ghani" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
   <!-- ═══════════════════════════════════════════════════════
-       STRUCTURED DATA — JSON-LD @graph
-       (Person · ProfilePage · WebSite · ImagineArt 2.0 ·
-        ImagineArt 1.5 · ImagineArt 1.5 Pro)
+       CRITICAL RESOURCES
+       The hero portrait is the LCP element on every viewport, so it is
+       preloaded ahead of the font CSS.
+  ════════════════════════════════════════════════════════ -->
+  <link rel="preload" as="image" href="/Muhammad_ahmed_DP.webp" fetchpriority="high" />
+
+  <!--
+    Fonts load without blocking render. The previous setup was the worst case:
+    a render-blocking <link> here AND an @import at the top of the bundled CSS,
+    which serialises HTML -> CSS -> font CSS -> font files before first paint.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" media="print" onload="this.media='all';this.onload=null"
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  </noscript>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STRUCTURED DATA — one @graph, nodes cross-referenced by @id
   ════════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-
       {
         "@type": "Person",
         "@id": "https://ahmedghani.com/#person",
         "name": "Muhammad Ahmed Ghani",
         "givenName": "Muhammad Ahmed",
         "familyName": "Ghani",
-        "alternateName": ["Ahmed Ghani", "Muhammad Ahmed", "M.A.G"],
+        "alternateName": ["Ahmed Ghani", "Muhammad Ahmed"],
         "url": "https://ahmedghani.com/",
+        "mainEntityOfPage": { "@id": "https://ahmedghani.com/#webpage" },
         "image": {
           "@type": "ImageObject",
           "url": "https://ahmedghani.com/Muhammad_ahmed_DP.webp",
-          "caption": "Muhammad Ahmed Ghani — ML Engineer from Pakistan"
+          "width": 1024,
+          "height": 1024,
+          "caption": "Muhammad Ahmed Ghani"
         },
         "jobTitle": [
-          "Lead Machine Learning Engineer",
-          "AI Solution Architect",
-          "ML Engineer"
+          "AI Research Lead",
+          "Machine Learning Lead",
+          "Machine Learning Engineer",
+          "AI Engineer",
+          "AI Researcher",
+          "Machine Learning Researcher"
         ],
-        "description": "Muhammad Ahmed Ghani is a Lead ML Engineer from Pakistan and the creator of ImagineArt 2.0, ImagineArt 1.5, and ImagineArt 1.5 Pro — the world's most realistic AI image generation models. He has 5+ years of experience building production-grade AI systems at global scale.",
-        "email": "i.am.a.pakistani.programmer@gmail.com",
+        "description": "AI Research Lead and Machine Learning Lead at ImagineArt, directing the model programme behind ImagineArt 2.0, 1.5 Pro and 1.5 — text-to-image models built for photorealism and accurate text rendering. Works across image, video, speech and agentic systems, taking research from first experiment through to production inference.",
+        "email": [
+          "mailto:muhammad.ahmed@imagine.art",
+          "mailto:i.am.a.pakistani.programmer@gmail.com"
+        ],
+        "knowsLanguage": ["en", "ur"],
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Lahore",
-          "addressRegion": "Punjab",
-          "addressCountry": "PK",
-          "addressCountryName": "Pakistan"
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "addressCountry": "PK"
         },
-        "nationality": {
-          "@type": "Country",
-          "name": "Pakistan"
+        "workLocation": {
+          "@type": "Place",
+          "name": "Islamabad, Pakistan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Islamabad",
+            "addressRegion": "Islamabad Capital Territory",
+            "addressCountry": "PK"
+          }
         },
-        "worksFor": {
-          "@type": "Organization",
-          "name": "ImagineArt",
-          "url": "https://www.imagine.art/",
-          "sameAs": "https://www.imagine.art/"
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Lahore, Pakistan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lahore",
+            "addressRegion": "Punjab",
+            "addressCountry": "PK"
+          }
+        },
+        "nationality": { "@type": "Country", "name": "Pakistan" },
+        "worksFor": { "@id": "https://www.imagine.art/#organization" },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Machine Learning Engineer",
+          "occupationalCategory": "15-2051.00",
+          "skills": "Generative AI, diffusion models, computer vision, large language models, MLOps, model optimisation"
         },
         "alumniOf": {
-          "@type": "EducationalOrganization",
+          "@type": "CollegeOrUniversity",
           "name": "University of Central Punjab",
+          "sameAs": "https://ucp.edu.pk/",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lahore",
@@ -155,28 +187,37 @@
         "knowsAbout": [
           "Machine Learning",
           "Generative AI",
+          "Diffusion Models",
+          "Flow Matching",
+          "Text-to-Image Generation",
+          "Video Generation",
           "Computer Vision",
           "Natural Language Processing",
           "Large Language Models",
-          "Stable Diffusion",
-          "MLOps",
-          "Model Optimization",
-          "LLMOps",
+          "Multimodal Learning",
+          "Speech Processing",
           "Agentic Systems",
-          "Text-to-Image Generation",
-          "AI Product Development",
-          "Deep Learning",
+          "Retrieval-Augmented Generation",
+          "Model Distillation",
+          "Model Quantisation",
+          "Preference Optimisation",
+          "Model Evaluation",
+          "MLOps",
+          "LLMOps",
+          "Model Optimization",
           "PyTorch",
           "TensorFlow",
-          "CUDA",
+          "Diffusers",
+          "Transformers",
           "ONNX",
           "TensorRT",
-          "AWS",
-          "GCP",
-          "Docker",
-          "FastAPI",
+          "CUDA",
           "Hugging Face",
-          "AI Solution Architecture"
+          "OpenCV",
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "GCP"
         ],
         "hasCredential": [
           {
@@ -196,30 +237,75 @@
             "credentialCategory": "certificate",
             "name": "TensorFlow Developer Specialization",
             "recognizedBy": { "@type": "Organization", "name": "DeepLearning.AI" }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Artificial Intelligence Specialization",
+            "recognizedBy": { "@type": "Organization", "name": "Samsung Innovation Campus" }
           }
         ],
         "sameAs": [
           "https://www.linkedin.com/in/ahmedghani/",
           "https://www.linkedin.com/in/muhammad-ahmed-ghani-ai/",
           "https://github.com/muhammad-ahmed-ghani",
-          "https://twitter.com/muhammad_ahmed_ghani",
-          "https://ahmedghani.com/"
+          "https://huggingface.co/ahmedghani",
+          "https://x.com/_ahmedghani",
+          "https://www.producthunt.com/@muhammad_ahmed_ghani"
+        ]
+      },
+
+      {
+        "@type": "Organization",
+        "@id": "https://www.imagine.art/#organization",
+        "name": "ImagineArt",
+        "alternateName": ["Vyro AI", "Vyro"],
+        "description": "ImagineArt, formerly Vyro AI, is a US-registered AI company founded and headquartered in Islamabad, Pakistan. ImagineArt is its flagship generative media platform.",
+        "url": "https://www.imagine.art/",
+        "sameAs": [
+          "https://www.imagine.art/",
+          "https://www.linkedin.com/company/vyro-ai"
         ],
-        "mainEntityOfPage": {
-          "@id": "https://ahmedghani.com/#webpage"
-        }
+        "foundingDate": "2022",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Islamabad, Pakistan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Islamabad",
+            "addressCountry": "PK"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "addressCountry": "PK"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "ImagineArt headquarters",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "NSTP, NUST, H-12",
+            "addressLocality": "Islamabad",
+            "addressCountry": "PK"
+          }
+        },
+        "employee": { "@id": "https://ahmedghani.com/#person" }
       },
 
       {
         "@type": "ProfilePage",
         "@id": "https://ahmedghani.com/#webpage",
         "url": "https://ahmedghani.com/",
-        "name": "Muhammad Ahmed Ghani — ML Engineer, Pakistan | Creator of ImagineArt 2.0",
-        "description": "Official portfolio of Muhammad Ahmed Ghani. Lead ML Engineer from Pakistan and creator of ImagineArt 2.0, 1.5 & 1.5 Pro — the world's most realistic AI image generation models.",
+        "name": "Muhammad Ahmed Ghani — AI Research Lead at ImagineArt",
+        "description": "Portfolio of Muhammad Ahmed Ghani, AI Research Lead and Machine Learning Lead at ImagineArt.",
         "isPartOf": { "@id": "https://ahmedghani.com/#website" },
         "about": { "@id": "https://ahmedghani.com/#person" },
         "mainEntity": { "@id": "https://ahmedghani.com/#person" },
-        "inLanguage": "en-US",
+        "primaryImageOfPage": { "@id": "https://ahmedghani.com/#person" },
+        "inLanguage": "en",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -238,105 +324,66 @@
         "@id": "https://ahmedghani.com/#website",
         "url": "https://ahmedghani.com/",
         "name": "Muhammad Ahmed Ghani",
-        "description": "Portfolio of Muhammad Ahmed Ghani — Lead ML Engineer from Pakistan and Creator of ImagineArt 2.0",
+        "description": "Portfolio of Muhammad Ahmed Ghani — AI Research Lead and Machine Learning Lead at ImagineArt.",
         "publisher": { "@id": "https://ahmedghani.com/#person" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://ahmedghani.com/?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        },
-        "inLanguage": "en-US"
+        "inLanguage": "en"
       },
 
       {
         "@type": "SoftwareApplication",
-        "@id": "https://www.imagine.art/image?modelListId=69#software",
+        "@id": "https://ahmedghani.com/#imagineart-2",
         "name": "ImagineArt 2.0",
         "alternateName": ["Imagine Art 2.0", "ImagineArt 2"],
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web",
         "url": "https://www.imagine.art/image?modelListId=69",
-        "sameAs": "https://www.imagine.art/",
-        "description": "ImagineArt 2.0 is the world's most realistic text-to-image AI model, delivering state-of-the-art photorealism, flawless text rendering, and unmatched creative control at production scale. Created by Muhammad Ahmed Ghani.",
+        "description": "Text-to-image model built for photorealism, text rendering and creative control at production scale.",
         "creator": { "@id": "https://ahmedghani.com/#person" },
-        "author": { "@id": "https://ahmedghani.com/#person" },
-        "publisher": {
-          "@type": "Organization",
-          "name": "ImagineArt",
-          "url": "https://www.imagine.art/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        "keywords": "ImagineArt 2.0, text to image AI, photorealistic AI, AI image generator, generative AI Pakistan"
+        "publisher": { "@id": "https://www.imagine.art/#organization" }
       },
 
       {
         "@type": "SoftwareApplication",
-        "@id": "https://www.imagine.art/image?modelListId=15#software",
+        "@id": "https://ahmedghani.com/#imagineart-15",
         "name": "ImagineArt 1.5",
-        "alternateName": ["Imagine Art 1.5", "ImagineArt 1.5 model"],
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web",
         "url": "https://www.imagine.art/image?modelListId=15",
-        "sameAs": "https://www.imagine.art/features/imagineart-1-0",
-        "description": "ImagineArt 1.5 is an industry-leading text-to-image model delivering hyper-realistic AI image generation with superior accuracy in skin tones, lighting, and textures. Created and led by Muhammad Ahmed Ghani.",
+        "description": "Text-to-image model delivering photorealistic generation with high fidelity in skin tones, lighting and texture.",
         "creator": { "@id": "https://ahmedghani.com/#person" },
-        "author": { "@id": "https://ahmedghani.com/#person" },
-        "publisher": {
-          "@type": "Organization",
-          "name": "ImagineArt",
-          "url": "https://www.imagine.art/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        "keywords": "ImagineArt 1.5, ImagineArt model, photorealistic image AI, text to image Pakistan, AI image generator"
+        "publisher": { "@id": "https://www.imagine.art/#organization" }
       },
 
       {
         "@type": "SoftwareApplication",
-        "@id": "https://www.imagine.art/features/imagineart-1-5-pro#software",
+        "@id": "https://ahmedghani.com/#imagineart-15-pro",
         "name": "ImagineArt 1.5 Pro",
-        "alternateName": ["Imagine Art 1.5 Pro", "ImagineArt 1.5Pro"],
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web",
         "url": "https://www.imagine.art/features/imagineart-1-5-pro",
-        "description": "ImagineArt 1.5 Pro is the professional-grade version of ImagineArt 1.5, delivering native 4K generation, sharper details, improved text accuracy, and cleaner micro-detail rendering across skin, fabric, and metal surfaces. Created by Muhammad Ahmed Ghani.",
+        "description": "Professional tier of ImagineArt 1.5, adding native 4K generation, sharper micro-detail and improved text accuracy.",
         "creator": { "@id": "https://ahmedghani.com/#person" },
-        "author": { "@id": "https://ahmedghani.com/#person" },
-        "publisher": {
-          "@type": "Organization",
-          "name": "ImagineArt",
-          "url": "https://www.imagine.art/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        "keywords": "ImagineArt 1.5 Pro, 4K AI image generation, professional AI images, ImagineArt pro model"
+        "publisher": { "@id": "https://www.imagine.art/#organization" }
       },
 
       {
         "@type": "FAQPage",
+        "@id": "https://ahmedghani.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
             "name": "Who is Muhammad Ahmed Ghani?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Muhammad Ahmed Ghani is a Lead Machine Learning Engineer and AI Solution Architect from Lahore, Pakistan. He is the creator of ImagineArt 2.0, ImagineArt 1.5, and ImagineArt 1.5 Pro — the world's most realistic AI image generation models. He has 5+ years of experience building production-grade AI systems with over 2 million users globally."
+              "text": "Muhammad Ahmed Ghani is an AI Research Lead and Machine Learning Lead at ImagineArt, based in Islamabad, Pakistan. ImagineArt — formerly Vyro AI — is a US-registered company founded and headquartered in Islamabad. He directs the model programme behind ImagineArt 2.0, ImagineArt 1.5 Pro and ImagineArt 1.5, and works across generative image, video, speech and agentic systems — taking research from first experiment through to production inference."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Muhammad Ahmed Ghani work on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "He leads research and engineering on generative models: diffusion and flow-matching image models, video generation with temporal consistency, speech systems, and agentic AI. His work covers model architecture, training, evaluation, distillation and quantisation, and the inference infrastructure that serves those models in production."
             }
           },
           {
@@ -344,44 +391,22 @@
             "name": "Who created ImagineArt 2.0?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ImagineArt 2.0 was created and led by Muhammad Ahmed Ghani, a Lead ML Engineer from Pakistan at ImagineArt (Vyro AI). ImagineArt 2.0 is the world's most realistic text-to-image AI model."
+              "text": "ImagineArt 2.0 was led by Muhammad Ahmed Ghani, AI Research Lead at ImagineArt, who directed its architecture and training. It was built by a team, not a single author."
             }
           },
           {
             "@type": "Question",
-            "name": "Who created ImagineArt 1.5 and ImagineArt 1.5 Pro?",
+            "name": "How can I contact Muhammad Ahmed Ghani?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ImagineArt 1.5 and ImagineArt 1.5 Pro were created by Muhammad Ahmed Ghani, Lead ML Engineer at ImagineArt. ImagineArt 1.5 set the global standard for photorealistic AI image generation, while ImagineArt 1.5 Pro adds native 4K generation, improved text accuracy, and sharper micro-details."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Who is the best ML Engineer in Pakistan?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Muhammad Ahmed Ghani is widely recognized as a top ML Engineer from Pakistan. He is the creator of the ImagineArt series of AI models — recognized globally as the world's most realistic AI image generation system. Based in Lahore, Pakistan, he has 5+ years of experience in Generative AI, Computer Vision, and MLOps."
+              "text": "By email at muhammad.ahmed@imagine.art (work) or i.am.a.pakistani.programmer@gmail.com (personal), or through LinkedIn at linkedin.com/in/ahmedghani. He is based in Islamabad, Pakistan, and originally from Lahore. Code and models are published at github.com/muhammad-ahmed-ghani and huggingface.co/ahmedghani."
             }
           }
         ]
       }
-
     ]
   }
   </script>
-
-  <!-- ═══════════════════════════════════════════════════════
-       FONTS — preconnect + preload critical weights
-  ════════════════════════════════════════════════════════ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
 </head>
 
 <body>

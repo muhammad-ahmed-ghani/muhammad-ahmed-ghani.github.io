@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import styles from './SkillHive.module.css';
 
@@ -12,38 +11,26 @@ const SkillHive: React.FC = () => {
     { label: 'Infrastructure', items: infrastructure },
   ];
 
-  const containerVariants = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.03 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] } },
-  };
-
   return (
     <section id="skills" className={styles.section}>
       <div className="container">
         <div className="section-label">
-          <span className="section-number">02</span>
+          <span className="section-number">03</span>
           Technical Stack
         </div>
 
         <div className={styles.header}>
-          <h2 className={`text-titanium ${styles.title}`}>The Arsenal</h2>
-          <p className={styles.sub}>Precision tooling for production AI at scale.</p>
+          <h2 className={`text-titanium ${styles.title}`}>The Stack</h2>
+          <p className={styles.sub}>Tools used day to day.</p>
         </div>
 
         <div className={styles.categories}>
           {categories.map((cat, ci) => (
-            <motion.div
+            <div
               key={cat.label}
               className={styles.category}
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
+              data-reveal
+              style={{ '--reveal-delay': `${ci * 0.1}s` } as React.CSSProperties}
             >
               <div className={styles.catHeader}>
                 <span className={styles.catNum}>0{ci + 1}</span>
@@ -51,13 +38,18 @@ const SkillHive: React.FC = () => {
                 <div className={styles.catLine} />
               </div>
               <div className={styles.badges}>
-                {cat.items.map((skill) => (
-                  <motion.span key={skill} className={styles.badge} variants={itemVariants}>
+                {cat.items.map((skill, si) => (
+                  <span
+                    key={skill}
+                    className={styles.badge}
+                    data-reveal
+                    style={{ '--reveal-delay': `${Math.min(ci * 0.06 + si * 0.012, 0.5)}s` } as React.CSSProperties}
+                  >
                     {skill}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

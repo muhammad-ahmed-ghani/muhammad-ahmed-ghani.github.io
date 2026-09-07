@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 import styles from './BentoGrid.module.css';
@@ -15,36 +14,33 @@ const BentoGrid: React.FC = () => {
 
         {/* Section label */}
         <div className="section-label">
-          <span className="section-number">01</span>
+          <span className="section-number">02</span>
           Selected Work
         </div>
 
         <div className={styles.header}>
           <h2 className={`text-titanium ${styles.title}`}>
-            Portals of<br />Innovation
+            Models &amp;{' '}<br />Products
           </h2>
           <p className={styles.subtitle}>
-            High-fidelity AI research translated<br />into products used by millions.
+            Research taken through{' '}<br />to shipped products.
           </p>
         </div>
 
         {/* Featured project */}
-        <motion.a
+        <a
           href={featured.link}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.featured}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          data-reveal
         >
           <div className={styles.featuredBg} />
           <div className={styles.featuredContent}>
             <div className={styles.featuredTop}>
               <div className={styles.featuredMeta}>
                 <span className={styles.projectId}>{featured.id}</span>
-                <span className={styles.featuredBadge}>FLAGSHIP MODEL</span>
+                <span className={styles.featuredBadge}>LATEST MODEL</span>
               </div>
               <ArrowUpRight size={28} className={styles.featuredArrow} />
             </div>
@@ -55,21 +51,19 @@ const BentoGrid: React.FC = () => {
             </div>
           </div>
           <div className={styles.featuredGlow} />
-        </motion.a>
+        </a>
 
         {/* Secondary grid */}
         <div className={styles.grid}>
           {rest.map((project, i) => (
-            <motion.a
+            <a
               key={project.id}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              data-reveal
+              style={{ '--reveal-delay': `${Math.min(i * 0.06, 0.24)}s` } as React.CSSProperties}
             >
               <div className={styles.cardTop}>
                 <span className={styles.projectId}>{project.id}</span>
@@ -81,7 +75,7 @@ const BentoGrid: React.FC = () => {
                 <p className={styles.cardDesc}>{project.description}</p>
               </div>
               <div className={styles.cardLine} />
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

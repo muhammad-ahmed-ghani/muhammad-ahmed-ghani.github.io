@@ -6,7 +6,9 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  // 'legacy' is the previous jQuery/Bootstrap site kept for reference; it is
+  // not built or deployed, and linting a minified jQuery bundle is noise.
+  globalIgnores(['dist', 'dist-ssr', 'legacy', 'assets', 'scripts']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

@@ -1,63 +1,56 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
-import { GraduationCap, MapPin } from 'lucide-react';
-import styles from './Experience.module.css'; // Reusing experience styles for consistency
+import styles from './Experience.module.css';
 
+/**
+ * Academic credentials.
+ *
+ * This component existed but was never rendered by any parent, and it was
+ * written against an older Experience.module.css — nine of the class names it
+ * used no longer exist, so it would have rendered essentially unstyled. It now
+ * mirrors the Experience timeline structure exactly.
+ */
 const Education: React.FC = () => {
     const { education } = portfolioData;
 
     return (
-        <section id="education" className="section">
+        <section id="education" className={styles.section}>
             <div className="container">
-                <div className={styles.header}>
-                    <span className={styles.category}>Foundations</span>
-                    <h2 className="text-gradient">Academic Credentials</h2>
-                    <p className="text-secondary">A solid foundation in computer science and artificial intelligence.</p>
+                <div className="section-label">
+                    <span className="section-number">06</span>
+                    Foundations
                 </div>
 
-                <div className={styles.timeline} style={{ maxWidth: '800px' }}>
-                    <motion.div
-                        className={styles.item}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className={styles.marker}>
-                            <div className={styles.markerInner}>
-                                <GraduationCap size={16} />
-                            </div>
+                <div className={styles.header}>
+                    <h2 className={`text-titanium ${styles.title}`}>Education</h2>
+                    <p className={styles.sub}>Undergraduate study.</p>
+                </div>
+
+                <div className={styles.timeline}>
+                    <div className={styles.item} data-reveal>
+                        <div className={styles.itemNum}>01</div>
+
+                        <div className={styles.meta}>
+                            <span className={styles.period}>{education.period}</span>
+                            <span className={styles.company}>{education.university}</span>
                         </div>
 
-                        <div className={`${styles.card} glass glass-hover`}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.meta}>
-                                    <h3 className={styles.role}>{education.degree}</h3>
-                                    <div className={styles.companyRow}>
-                                        <span className={styles.company}>{education.university}</span>
-                                        <span className={styles.divider}>•</span>
-                                        <span className={styles.period}>{education.period}</span>
-                                    </div>
-                                    <div className={styles.companyRow} style={{ marginTop: '4px', opacity: 0.7 }}>
-                                        <MapPin size={14} />
-                                        <span>{education.location}</span>
-                                        <span className={styles.divider}>•</span>
-                                        <span>CGPA: {education.cgpa}</span>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div className={styles.content}>
+                            <h3 className={styles.role}>{education.degree}</h3>
                             <ul className={styles.details}>
-                                {education.details.map((detail, idx) => (
-                                    <li key={idx} className={styles.detailItem}>
-                                        <span className={styles.bullet}>→</span>
-                                        <p>{detail}</p>
+                                <li className={styles.detail}>
+                                    <span className={styles.detailDot} />
+                                    <span>{education.location} · CGPA {education.cgpa}</span>
+                                </li>
+                                {education.details.map((detail, i) => (
+                                    <li key={i} className={styles.detail}>
+                                        <span className={styles.detailDot} />
+                                        <span>{detail}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
