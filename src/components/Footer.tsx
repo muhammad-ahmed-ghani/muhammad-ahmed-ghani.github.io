@@ -50,6 +50,13 @@ const Footer: React.FC = () => {
               {portfolioData.personal.personalEmail}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
+            <a
+              href={`tel:${portfolioData.personal.phone}`}
+              className={styles.btnSecondary}
+            >
+              {portfolioData.personal.phone}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </div>
 

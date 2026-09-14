@@ -5,7 +5,7 @@ export const portfolioData = {
         image: "/Muhammad_ahmed_DP.webp",
         email: "muhammad.ahmed@imagine.art",
         personalEmail: "i.am.a.pakistani.programmer@gmail.com",
-        phone: "+92 301 4902083",
+        phone: "+923014902083",
         location: "Islamabad, Pakistan",
         tagline: "Generative image, video and speech models — research through to production.",
         summary: "AI Research Lead and Machine Learning Lead at ImagineArt, directing the model programme behind ImagineArt 2.0, 1.5 Pro and 1.5 — text-to-image models built for photorealism and accurate text rendering. Works across image, video, speech and agentic systems, taking research from first experiment through to production inference.",
