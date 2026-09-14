@@ -8,6 +8,7 @@ const navItems = [
   { name: 'Work', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Timeline', href: '#experience' },
+  { name: 'Writing', href: '/writing/' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -76,7 +77,7 @@ const Navbar: React.FC = () => {
               <a
                 href={item.href}
                 className={styles.link}
-                onClick={(e) => goto(e, item.href)}
+                onClick={item.href.startsWith('#') ? (e) => goto(e, item.href) : undefined}
               >
                 <span className={styles.linkNum}>0{i + 1}</span>
                 {item.name}

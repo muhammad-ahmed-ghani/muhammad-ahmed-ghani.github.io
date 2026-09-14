@@ -3,17 +3,41 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ahmedghani.com/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://ahmedghani.com/Muhammad_ahmed_DP.webp</image:loc>
       <image:title>Muhammad Ahmed Ghani</image:title>
-      <image:caption>Muhammad Ahmed Ghani — AI Research Lead and Machine Learning Lead at ImagineArt</image:caption>
+      <image:caption>Muhammad Ahmed Ghani — AI/ML Lead and Lead Researcher at ImagineArt</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ahmedghani.com/og-cover.png</image:loc>
-      <image:title>Muhammad Ahmed Ghani — AI Research Lead at ImagineArt</image:title>
+      <image:title>Muhammad Ahmed Ghani — AI/ML Lead at ImagineArt</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://ahmedghani.com/writing/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ahmedghani.com/writing/imagineart-2-0-model-programme/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ahmedghani.com/writing/imagineart-2-0-edit/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ahmedghani.com/writing/imagineart-1-5-pro-native-4k/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

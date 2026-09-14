@@ -9,6 +9,7 @@ import SkillHive from './components/SkillHive';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
+import Writing from './components/Writing';
 import Footer from './components/Footer';
 import { useReveal } from './hooks/useReveal';
 
@@ -39,6 +40,7 @@ function App() {
                 <Experience />
                 <Certifications />
                 <Education />
+                <Writing />
             </main>
 
             <Footer />

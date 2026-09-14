@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing by Muhammad Ahmed Ghani</title>
+    <link>https://ahmedghani.com/writing/</link>
+    <description>First-person ImagineArt model case studies by Muhammad Ahmed Ghani.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0500</lastBuildDate>
+    <atom:link href="https://ahmedghani.com/writing/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://ahmedghani.com/favicon.png</url>
+      <title>Writing by Muhammad Ahmed Ghani</title>
+      <link>https://ahmedghani.com/writing/</link>
+    </image>
+    <item>
+      <title>Leading the ImagineArt 2.0 Model Programme</title>
+      <link>https://ahmedghani.com/writing/imagineart-2-0-model-programme/</link>
+      <guid isPermaLink="true">https://ahmedghani.com/writing/imagineart-2-0-model-programme/</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0500</pubDate>
+      <author>muhammad.ahmed@imagine.art (Muhammad Ahmed Ghani)</author>
+      <category>ImagineArt 2.0</category>
+      <description>The research scope behind true-to-life realism, prompt understanding, precise text and cinematic control.</description>
+    </item>
+    <item>
+      <title>Building ImagineArt 2.0 Edit</title>
+      <link>https://ahmedghani.com/writing/imagineart-2-0-edit/</link>
+      <guid isPermaLink="true">https://ahmedghani.com/writing/imagineart-2-0-edit/</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0500</pubDate>
+      <author>muhammad.ahmed@imagine.art (Muhammad Ahmed Ghani)</author>
+      <category>ImagineArt 2.0 Edit</category>
+      <description>A unified image-grounded model for composition, identity preservation, product placement and style transfer.</description>
+    </item>
+    <item>
+      <title>ImagineArt 1.5 Pro and Native 4K</title>
+      <link>https://ahmedghani.com/writing/imagineart-1-5-pro-native-4k/</link>
+      <guid isPermaLink="true">https://ahmedghani.com/writing/imagineart-1-5-pro-native-4k/</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0500</pubDate>
+      <author>muhammad.ahmed@imagine.art (Muhammad Ahmed Ghani)</author>
+      <category>ImagineArt 1.5 Pro</category>
+      <description>A realism-focused image model and production pipeline built for professional native 4K output.</description>
+    </item>
+  </channel>
+</rss>

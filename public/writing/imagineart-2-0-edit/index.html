@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building ImagineArt 2.0 Edit — Muhammad Ahmed Ghani</title>
+  <meta name="description" content="Muhammad Ahmed Ghani documents his lead-research role on ImagineArt 2.0 Edit, a unified image-grounded model for multi-image composition, identity preservation and directed editing.">
+  <meta name="author" content="Muhammad Ahmed Ghani">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://ahmedghani.com/writing/imagineart-2-0-edit/">
+  <link rel="alternate" type="application/rss+xml" href="https://ahmedghani.com/writing/feed.xml" title="Muhammad Ahmed Ghani — Writing">
+  <link rel="stylesheet" href="/writing/blog.css"><link rel="icon" href="/favicon.png">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://ahmedghani.com/writing/imagineart-2-0-edit/"><meta property="og:title" content="Building ImagineArt 2.0 Edit"><meta property="og:description" content="A unified image-grounded model for composition, identity preservation, product placement and style transfer."><meta property="og:image" content="https://ahmedghani.com/og-cover.png"><meta property="article:published_time" content="2026-09-14"><meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","@id":"https://ahmedghani.com/writing/imagineart-2-0-edit/#article","headline":"Building ImagineArt 2.0 Edit","description":"Muhammad Ahmed Ghani documents his lead-research role on ImagineArt 2.0 Edit.","datePublished":"2026-09-14","dateModified":"2026-09-14","mainEntityOfPage":"https://ahmedghani.com/writing/imagineart-2-0-edit/","image":"https://ahmedghani.com/og-cover.png","author":{"@type":"Person","@id":"https://ahmedghani.com/#person","name":"Muhammad Ahmed Ghani","url":"https://ahmedghani.com/"},"publisher":{"@id":"https://ahmedghani.com/#person"},"about":{"@type":"SoftwareApplication","name":"ImagineArt 2.0 Edit","url":"https://www.imagine.art/features/imagineart-2-0-edit","applicationCategory":"MultimediaApplication"},"keywords":["ImagineArt 2.0 Edit","AI image editing","identity preservation","multi-image composition","Muhammad Ahmed Ghani"],"inLanguage":"en","isPartOf":{"@id":"https://ahmedghani.com/writing/#blog"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">M.A.G</a><nav class="site-nav" aria-label="Primary"><a href="/">Portfolio</a><a href="/writing/">Case Studies</a><a href="/writing/feed.xml">RSS</a></nav></header>
+  <main>
+    <header class="article-hero shell"><p class="eyebrow">ImagineArt 2.0 Edit · Model case study 02</p><h1>Building ImagineArt 2.0 Edit</h1><p class="article-dek">The editing model was designed around direction instead of a layer stack: bring up to four reference images, describe the intended frame, and preserve what matters while changing what does not.</p><div class="byline"><img src="/Muhammad_ahmed_DP.webp" alt="Muhammad Ahmed Ghani" width="44" height="44"><span>By Muhammad Ahmed Ghani · <time datetime="2026-09-14">14 September 2026</time> · Case study</span></div></header>
+    <div class="article-layout shell">
+      <article class="prose">
+        <p>I led research with our ML team for ImagineArt 2.0 Edit, the image-grounded counterpart to the 2.0 text-to-image model. The project asked a harder question than “can the model edit an image?” We wanted one system to reason across people, products, garments, scenes, poses and styles while preserving the identity and structure that made the input valuable.</p>
+
+        <h2 id="problem">From instruction to composed frame</h2>
+        <p>Traditional editing workflows make the user manage masks, layers, transforms and lighting corrections. A generative editing model can compress those operations into a natural-language direction, but only if it understands the role of every reference image.</p>
+        <p>ImagineArt 2.0 Edit accepts as many as four references in one request. A user can provide a subject, another person, a garment and an environment, then direct how they should appear together. The model must preserve local evidence—face, fabric, product geometry—while creating a globally coherent frame.</p>
+
+        <h2 id="role">My research scope</h2>
+        <p>My role covered the model programme from capability definition through production readiness. I led the team working on multi-reference conditioning, identity preservation, aspect-ratio behavior and the evaluation needed to compare editing quality across very different use cases.</p>
+        <p>The model had to support a connected set of workflows:</p>
+        <ul><li>multi-subject and scene composition;</li><li>identity-preserving changes to setting, lighting and wardrobe;</li><li>outfit swap and product placement;</li><li>style transfer without losing structural geometry;</li><li>background replacement and subject insertion;</li><li>pose and expression transfer.</li></ul>
+
+        <h2 id="identity">Preserving identity under change</h2>
+        <p>Identity preservation is not a single similarity score. A recognisable face can still feel wrong when body proportion, age cues, hair or expression drift. Product identity has its own requirements: shape, material, hardware and branding need to survive contact with a newly generated scene.</p>
+        <p>We treated preservation and edit strength as a controlled tension. If conditioning is too rigid, the new frame looks collaged. If it is too weak, the subject becomes generic. Evaluation therefore paired reference fidelity with lighting integration, pose plausibility and scene coherence.</p>
+
+        <blockquote>An editing model succeeds when the result feels newly photographed, while the people and products still feel unquestionably the same.</blockquote>
+
+        <h2 id="composition">Multi-image composition</h2>
+        <p>Multiple references create an assignment problem. The instruction must establish who goes where, which garment belongs to which person and whether an image represents content, style or setting. ImagineArt 2.0 Edit was developed so these roles can be expressed in ordinary direction rather than a specialist syntax.</p>
+        <p>Composition also requires a common visual world. Shadows, camera angle, depth and color response should agree across inputs. The released model is designed to integrate those decisions in one generation instead of relying on separate compositing and relighting passes.</p>
+
+        <h2 id="canvas">Native canvases and production output</h2>
+        <p>Editing models often force inputs through a square canvas and crop them back afterwards. That breaks composition and wastes the information in wide or vertical references. We developed native aspect-ratio behavior so the first image can define the frame or the user can choose a target ratio explicitly.</p>
+        <p>The production release supports eight named aspect ratios plus automatic matching, with output up to 2048 pixels. These behaviors are documented on the official <a href="https://www.imagine.art/features/imagineart-2-0-edit">ImagineArt 2.0 Edit product page</a> and exposed through the <a href="https://api-ml.imagine.art/">ImagineArt API</a>.</p>
+
+        <h2 id="evaluation">Evaluating edits as instructions</h2>
+        <p>Image quality alone cannot measure whether an edit worked. We built evaluation around the contract expressed by the instruction: what must stay, what must move and what must change. Each capability needs targeted cases, followed by mixed cases that expose conflicts between preservation and transformation.</p>
+        <p>For example, outfit replacement tests garment fidelity, body preservation, contact, occlusion and lighting at once. Subject insertion tests identity, scale, perspective, shadow and environmental integration. A useful review records the failure dimension rather than collapsing every judgment into one preference score.</p>
+
+        <h2 id="result">One model, a wider creative surface</h2>
+        <p>The final model turns a broad family of image-editing tasks into one directed workflow. Creators can cast subjects, change wardrobes, place products, transfer style and re-stage scenes without moving between separate tools.</p>
+        <p>For the research team, the larger achievement was unification: one image-grounded model, one production interface and a shared evaluation language for control. That is the foundation for creative systems that respond less like a filter and more like a collaborator.</p>
+
+        <section class="author-box" aria-label="About the author"><img src="/Muhammad_ahmed_DP.webp" alt="Muhammad Ahmed Ghani" width="84" height="84"><div><h2>About Muhammad Ahmed Ghani</h2><p>Muhammad Ahmed Ghani is AI/ML Lead and Lead Researcher at ImagineArt. He currently works in Islamabad, Pakistan, and is originally from Lahore. <a href="/">View his profile and model portfolio</a>.</p></div></section>
+      </article>
+      <aside class="toc" aria-label="On this page"><h2>On this page</h2><a href="#problem">The problem</a><a href="#role">Research scope</a><a href="#identity">Identity</a><a href="#composition">Composition</a><a href="#canvas">Native canvases</a><a href="#evaluation">Evaluation</a><a href="#result">Result</a></aside>
+    </div>
+  </main>
+  <footer class="site-footer"><span>© 2026 Muhammad Ahmed Ghani</span><a href="/writing/">More model case studies</a></footer>
+</body>
+</html>

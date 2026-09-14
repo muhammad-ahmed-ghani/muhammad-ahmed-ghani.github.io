@@ -34,31 +34,31 @@ const About: React.FC = () => {
                         <h2 className="sr-only">About Muhammad Ahmed Ghani</h2>
 
                         <p className={styles.lede}>
-                            <strong>Muhammad Ahmed Ghani</strong> is an AI Research Lead and
-                            Machine Learning Lead at <strong>ImagineArt</strong>, based in
-                            Islamabad, Pakistan. He directs the model programme behind{' '}
-                            <span className={styles.accent}>ImagineArt 2.0</span>,{' '}
-                            <span className={styles.accent}>ImagineArt 1.5 Pro</span> and{' '}
-                            <span className={styles.accent}>ImagineArt 1.5</span> — text-to-image
-                            models built for photorealism and accurate text rendering.
+                            <strong>Muhammad Ahmed Ghani</strong> is AI/ML Lead and Lead
+                            Researcher at <strong>ImagineArt</strong>, currently working in
+                            Islamabad, Pakistan. He led research for{' '}
+                            <span className={styles.accent}>ImagineArt 2.0</span> and{' '}
+                            <span className={styles.accent}>ImagineArt 2.0 Edit</span>, and built{' '}
+                            <span className={styles.accent}>ImagineArt 1.5 Pro</span>.
                         </p>
 
                         <p className={styles.body}>
-                            The work spans generative image, video, speech and agentic systems:
-                            model architecture and training, evaluation, distillation and
-                            quantisation, and the inference infrastructure that serves those
-                            models in production. As of{' '}
+                            The work spans text-to-image generation, image-grounded editing,
+                            native 4K output, video, speech and agentic systems: model architecture,
+                            training, evaluation and the inference infrastructure that serves
+                            those models in production. As of{' '}
                             <time dateTime="2026-09">September 2026</time>, systems he has led
                             are used by more than two million people.
                         </p>
 
                         <p className={styles.body}>
+                            Born on <time dateTime="2001-06-05">5 June 2001</time>, he studied
+                            computer science at the University of Central Punjab in Lahore.
                             Before ImagineArt came five years across Ekkel AI, Kodezi and
                             Sigmetec — leading a team of five through more than twenty projects
                             in speech processing, natural language processing and computer
                             vision, and building the MLOps foundations for AI developer tooling
-                            as a founding engineer. Originally from Lahore, where he read
-                            computer science at the University of Central Punjab.
+                            as a founding engineer.
                         </p>
                     </div>
 
@@ -74,19 +74,19 @@ const About: React.FC = () => {
                         </div>
 
                         <div>
-                            <h3 className={styles.q}>Who built ImagineArt 2.0?</h3>
+                            <h3 className={styles.q}>Who led research for ImagineArt 2.0?</h3>
                             <p className={styles.a}>
-                                Muhammad Ahmed Ghani led its architecture and training at
-                                ImagineArt. These are team-built systems — ImagineArt 1.5 was
-                                built with a team of seven ML engineers, and 1.5 Pro added native
-                                4K generation and finer micro-detail.
+                                Muhammad Ahmed Ghani led research and the ML team behind
+                                ImagineArt 2.0. These are team-built systems; he separately built
+                                ImagineArt 1.5 Pro as sole developer.
                             </p>
                         </div>
 
                         <div>
                             <h3 className={styles.q}>Where is he based, and is he available?</h3>
                             <p className={styles.a}>
-                                Islamabad, Pakistan — originally from Lahore — working with
+                                Working in Islamabad, Pakistan, and originally from Lahore;
+                                working with
                                 teams globally. Open to research collaboration, consulting and
                                 speaking, at{' '}
                                 <a href={`mailto:${personal.email}`}>{personal.email}</a>{' '}

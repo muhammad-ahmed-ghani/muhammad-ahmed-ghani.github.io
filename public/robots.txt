@@ -1,7 +1,7 @@
 # robots.txt — ahmedghani.com
-# Muhammad Ahmed Ghani — AI Research Lead & Machine Learning Lead, ImagineArt
+# Muhammad Ahmed Ghani — AI/ML Lead & Lead Researcher, ImagineArt
 # Contact: muhammad.ahmed@imagine.art
-# Last reviewed: 2026-09-07
+# Last reviewed: 2026-09-14
 #
 # Posture: fully open. The page is prerendered to static HTML at build time,
 # so every crawler below can read the full content without executing

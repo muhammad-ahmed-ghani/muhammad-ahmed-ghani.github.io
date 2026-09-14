@@ -48,8 +48,8 @@ const Hero: React.FC = () => (
             <div className={styles.roleBlock}>
               <div className={styles.roleSep} />
               <p className={styles.role}>
-                AI Research Lead<br />
-                &amp; Machine Learning Lead at ImagineArt
+                AI/ML Lead &amp; Lead Researcher<br />
+                at ImagineArt
               </p>
             </div>
 
@@ -97,7 +97,7 @@ const Hero: React.FC = () => (
               <div className={styles.imageGlow} />
               <img
                 src="/Muhammad_ahmed_DP.webp"
-                alt="Muhammad Ahmed Ghani — AI Research Lead at ImagineArt"
+                alt="Muhammad Ahmed Ghani — AI/ML Lead and Lead Researcher at ImagineArt"
                 className={styles.image}
                 width={1024}
                 height={1024}

@@ -1,17 +1,17 @@
 export const portfolioData = {
     personal: {
         name: "Muhammad Ahmed Ghani",
-        role: "AI Research Lead & Machine Learning Lead at ImagineArt",
+        role: "AI/ML Lead & Lead Researcher at ImagineArt",
         image: "/Muhammad_ahmed_DP.webp",
         email: "muhammad.ahmed@imagine.art",
         personalEmail: "i.am.a.pakistani.programmer@gmail.com",
         phone: "+923014902083",
         location: "Islamabad, Pakistan",
-        tagline: "Generative image, video and speech models — research through to production.",
-        summary: "AI Research Lead and Machine Learning Lead at ImagineArt, directing the model programme behind ImagineArt 2.0, 1.5 Pro and 1.5 — text-to-image models built for photorealism and accurate text rendering. Works across image, video, speech and agentic systems, taking research from first experiment through to production inference.",
+        tagline: "Leading the ImagineArt in-house model line — research through to production.",
+        summary: "AI/ML Lead and Lead Researcher at ImagineArt. Led research for ImagineArt 2.0 and ImagineArt 2.0 Edit and built ImagineArt 1.5 Pro, spanning text-to-image, image-grounded editing, native 4K generation, agentic creative systems and production inference.",
         socials: {
             github: "https://github.com/muhammad-ahmed-ghani",
-            linkedin: "https://www.linkedin.com/in/ahmedghani/",
+            linkedin: "https://www.linkedin.com/in/muhammad-ahmed-ghani-ai/",
             twitter: "https://x.com/_ahmedghani",
             huggingface: "https://huggingface.co/ahmedghani",
             producthunt: "https://www.producthunt.com/@muhammad_ahmed_ghani",
@@ -23,30 +23,20 @@ export const portfolioData = {
     experience: [
         {
             company: "ImagineArt",
-            role: "Machine Learning Lead",
-            period: "Sep 2024 – Present",
+            role: "AI/ML Lead & Lead Researcher",
+            period: "Mar 2024 – Present",
             details: [
-                "Led architecture and training for ImagineArt 2.0, focused on photorealism and text rendering.",
-                "Built ImagineArt 1.5, a text-to-image model, with a team of seven ML engineers.",
-                "Architected Chatly/Everask Agentic AI solutions utilizing GPT-4o, Gemini 1.5 Pro, and Claude 3.5.",
-                "Built Imagine Shorts for automated video generation from text prompts.",
-                "Developed Imagine Avatars for AI persona generation and animation."
-            ]
-        },
-        {
-            company: "ImagineArt",
-            role: "Sr. ML Engineer",
-            period: "Mar 2024 – Aug 2024",
-            details: [
-                "Optimised model infrastructure for dynamic CPU/GPU switching, reducing operational cost by about 40%.",
-                "Developed Saaz — a singing voice cloning product with real-time inference capabilities.",
-                "Built AI product photography with sub-2s inference and production pipelines."
+                "Lead and mentor a seven-person ML team across research, product delivery and production infrastructure.",
+                "Led research for ImagineArt 2.0 and 2.0 Edit across photorealism, prompt understanding, typography, multi-image composition and identity preservation.",
+                "Built ImagineArt 1.5 Pro as sole developer, including native 4K generation and a 40% faster inference pipeline.",
+                "Built Imagine Assist to orchestrate image, video and audio tools through one conversational interface.",
+                "Established ML architecture, evaluation, deployment and observability standards across the AI organization."
             ]
         },
         {
             company: "Ekkel AI",
             role: "Sr. AI Engineer / Team Lead",
-            period: "May 2021 – Mar 2024",
+            period: "Jul 2021 – Mar 2024",
             details: [
                 "Led team of 5 engineers, delivering 22+ projects across Speech Processing, NLP, and Computer Vision.",
                 "Managed large-scale deployments on AWS, GCP, and Runpod across global infrastructure.",
@@ -111,42 +101,50 @@ export const portfolioData = {
     projects: [
         {
             id: "P.001",
-            title: "ImagineArt 2.0",
-            category: "Generative AI",
-            description: "Text-to-image model built for photorealism and accurate text rendering at production scale. Led its architecture and training.",
-            link: "https://www.imagine.art/image?modelListId=69",
+            title: "ImagineArt 2.0 & 2.0 Edit",
+            category: "Lead Research · Generative AI",
+            description: "Led research and an ML team across the flagship text-to-image and image-editing models: photorealism, prompt understanding, typography, multi-image composition and identity preservation.",
+            link: "https://www.imagine.art/features/imagineart-2-0",
             featured: true
         },
         {
             id: "P.002",
-            title: "ImagineArt 1.5",
-            category: "Generative AI",
-            description: "Photorealistic text-to-image model, built with a team of seven ML engineers.",
-            link: "https://www.imagine.art/image?modelListId=15",
+            title: "ImagineArt 1.5 Pro",
+            category: "Model Research · Native 4K",
+            description: "Sole developer of the realism-focused successor to 1.5, with native 4K generation, stronger anatomy and prompt adherence, and a 40% faster inference pipeline.",
+            link: "https://www.imagine.art/features/imagineart-1-5-pro",
             featured: false
         },
         {
             id: "P.003",
-            title: "Imagine Shorts",
-            category: "Video Generation",
-            description: "Automated video generation, from a single text prompt through to a finished cut.",
-            link: "https://www.shorts.imagine.art/dashboard",
+            title: "ImagineArt 1.5",
+            category: "MoE Diffusion · Model Programme",
+            description: "Led model development and built the training and evaluation stack across data curation, distributed training and automated evaluation.",
+            link: "https://www.imagine.art/image?modelListId=15",
             featured: false
         },
         {
             id: "P.004",
-            title: "Imagine Avatars",
-            category: "Computer Vision",
-            description: "AI persona generation and animation, with real-time inference and sub-second rendering.",
-            link: "https://www.imagine.art/dashboard/avatars",
+            title: "Imagine Assist",
+            category: "Agentic Creative AI",
+            description: "Built a personalized control agent that routes image, video and audio tools through one conversational interface with style memory and preference learning.",
+            link: "https://www.imagine.art/",
             featured: false
         },
         {
             id: "P.005",
-            title: "Chatly AI",
-            category: "Agentic NLP",
-            description: "Multi-agent conversational system integrating GPT-4o, Claude 3.5 and Gemini.",
-            link: "https://chatlyai.app/",
+            title: "ImagineArt 1.0",
+            category: "Model Architecture · Deployment",
+            description: "Delivered the first in-house realistic image model, including the MoE architecture, data pipelines, training infrastructure and scalable GPU inference.",
+            link: "https://www.imagine.art/",
+            featured: false
+        },
+        {
+            id: "P.006",
+            title: "Imagine Platform",
+            category: "Applied AI · Infrastructure",
+            description: "Shipped avatar and short-form video systems, then reduced inference latency through quantization, caching and GPU optimization.",
+            link: "https://www.imagine.art/",
             featured: false
         }
     ]

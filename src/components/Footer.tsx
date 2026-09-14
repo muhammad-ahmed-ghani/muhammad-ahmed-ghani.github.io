@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         {/* CTA Block */}
         <div className={styles.cta}>
           <div className="section-label">
-            <span className="section-number">07</span>
+            <span className="section-number">08</span>
             Get In Touch
           </div>
 
@@ -83,6 +83,7 @@ const Footer: React.FC = () => {
                   {item.label}
                 </a>
               ))}
+              <a href="/writing/" className={styles.navLink}>Writing</a>
             </div>
 
             <div className={styles.navGroup}>
