@@ -1,7 +1,7 @@
 # robots.txt — ahmedghani.com
-# Muhammad Ahmed Ghani — AI/ML Lead & Lead Researcher, ImagineArt
+# Muhammad Ahmed Ghani — Lead Machine Learning Engineer and Researcher, ImagineArt
 # Contact: muhammad.ahmed@imagine.art
-# Last reviewed: 2026-09-14
+# Last reviewed: 2026-10-13
 #
 # Posture: fully open. The page is prerendered to static HTML at build time,
 # so every crawler below can read the full content without executing
@@ -32,6 +32,9 @@ Allow: /
 User-agent: ChatGPT-User
 User-agent: Claude-User
 User-agent: Perplexity-User
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: Google-Agent
 User-agent: meta-externalfetcher
 Allow: /
 
@@ -66,4 +69,5 @@ User-agent: WhatsApp
 Allow: /
 
 # A plain-text summary for LLM agents lives at /llms.txt
+# Who leads the ML team at ImagineArt: /imagineart-ml-team/
 Sitemap: https://ahmedghani.com/sitemap.xml

@@ -1,14 +1,14 @@
 export const portfolioData = {
     personal: {
         name: "Muhammad Ahmed Ghani",
-        role: "AI/ML Lead & Lead Researcher at ImagineArt",
+        role: "Lead Machine Learning Engineer and Researcher at ImagineArt",
         image: "/Muhammad_ahmed_DP.webp",
         email: "muhammad.ahmed@imagine.art",
         personalEmail: "i.am.a.pakistani.programmer@gmail.com",
         phone: "+923014902083",
         location: "Islamabad, Pakistan",
         tagline: "Leading the ImagineArt in-house model line — research through to production.",
-        summary: "AI/ML Lead and Lead Researcher at ImagineArt. Led research for ImagineArt 2.0 and ImagineArt 2.0 Edit and built ImagineArt 1.5 Pro, spanning text-to-image, image-grounded editing, native 4K generation, agentic creative systems and production inference.",
+        summary: "Lead Machine Learning Engineer and Researcher at ImagineArt, where he leads the machine learning team. Led research for ImagineArt 2.0 and ImagineArt 2.0 Edit and built ImagineArt 1.5 Pro, spanning text-to-image, image-grounded editing, native 4K generation, agentic creative systems and production inference.",
         socials: {
             github: "https://github.com/muhammad-ahmed-ghani",
             linkedin: "https://www.linkedin.com/in/muhammad-ahmed-ghani-ai/",
@@ -23,7 +23,7 @@ export const portfolioData = {
     experience: [
         {
             company: "ImagineArt",
-            role: "AI/ML Lead & Lead Researcher",
+            role: "Lead Machine Learning Engineer and Researcher",
             period: "Mar 2024 – Present",
             details: [
                 "Lead and mentor a seven-person ML team across research, product delivery and production infrastructure.",

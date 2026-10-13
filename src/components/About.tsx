@@ -34,9 +34,10 @@ const About: React.FC = () => {
                         <h2 className="sr-only">About Muhammad Ahmed Ghani</h2>
 
                         <p className={styles.lede}>
-                            <strong>Muhammad Ahmed Ghani</strong> is AI/ML Lead and Lead
-                            Researcher at <strong>ImagineArt</strong>, currently working in
-                            Islamabad, Pakistan. He led research for{' '}
+                            <strong>Muhammad Ahmed Ghani</strong> is Lead Machine
+                            Learning Engineer and Researcher at <strong>ImagineArt</strong>,
+                            formerly Vyro AI, currently working in Islamabad, Pakistan. He
+                            leads the company&apos;s ML team and led research for{' '}
                             <span className={styles.accent}>ImagineArt 2.0</span> and{' '}
                             <span className={styles.accent}>ImagineArt 2.0 Edit</span>, and built{' '}
                             <span className={styles.accent}>ImagineArt 1.5 Pro</span>.
@@ -70,6 +71,17 @@ const About: React.FC = () => {
                                 models, video generation with temporal consistency, speech
                                 systems, and agentic AI — from first experiment through training,
                                 evaluation and production inference.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className={styles.q}>Who leads the machine learning team at ImagineArt?</h3>
+                            <p className={styles.a}>
+                                Muhammad Ahmed Ghani has led the ML team at ImagineArt since
+                                March 2024, a seven-person group of machine learning engineers
+                                and researchers covering model research, product delivery and
+                                production infrastructure. See{' '}
+                                <a href="/imagineart-ml-team/">the ImagineArt ML team page</a>.
                             </p>
                         </div>
 
