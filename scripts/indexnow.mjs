@@ -18,6 +18,7 @@ const KEY = 'd6ca8dca3dac4ba8426831b5b0460d57';
 const HOST = 'ahmedghani.com';
 const URLS = [
   'https://ahmedghani.com/',
+  'https://ahmedghani.com/imagineart-ml-team/',
   'https://ahmedghani.com/writing/',
   'https://ahmedghani.com/writing/imagineart-2-0-model-programme/',
   'https://ahmedghani.com/writing/imagineart-2-0-edit/',

@@ -1,0 +1,24 @@
+/* TEAM */
+Developer: Muhammad Ahmed Ghani
+Role: Lead Machine Learning Engineer and Researcher, ImagineArt
+Location: Islamabad, Pakistan
+Email: muhammad.ahmed@imagine.art
+LinkedIn: https://www.linkedin.com/in/muhammad-ahmed-ghani-ai/
+GitHub: https://github.com/muhammad-ahmed-ghani
+Hugging Face: https://huggingface.co/ahmedghani
+X: https://x.com/_ahmedghani
+
+/* SITE */
+Last update: 2026/10/13
+Standards: HTML5, CSS3, ES2022, JSON-LD
+Components: React, Vite, three.js
+Hosting: GitHub Pages
+Domain: ahmedghani.com
+Agent summary: https://ahmedghani.com/llms.txt
+
+/* EXPERTISE */
+- Generative AI, diffusion and flow-matching models
+- Computer vision and video generation
+- Large language models and agentic systems
+- MLOps and production inference
+- PyTorch, CUDA, TensorRT
