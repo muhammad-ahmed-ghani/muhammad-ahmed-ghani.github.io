@@ -8,7 +8,7 @@ const navItems = [
   { name: 'Work', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Timeline', href: '#experience' },
-  { name: 'Writing', href: '/writing/' },
+  { name: 'ML Team', href: '/imagineart-ml-team/' },
   { name: 'Contact', href: '#contact' },
 ];
 

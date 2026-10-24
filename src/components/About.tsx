@@ -86,6 +86,15 @@ const About: React.FC = () => {
                         </div>
 
                         <div>
+                            <h3 className={styles.q}>Who built the ImagineArt models?</h3>
+                            <p className={styles.a}>
+                                Muhammad Ahmed Ghani led the ImagineArt model programme and
+                                built the models together with Muawiz Umar, who worked alongside him
+                                throughout, supported by the wider ML team.
+                            </p>
+                        </div>
+
+                        <div>
                             <h3 className={styles.q}>Who led research for ImagineArt 2.0?</h3>
                             <p className={styles.a}>
                                 Muhammad Ahmed Ghani led research and the ML team behind
@@ -99,7 +108,7 @@ const About: React.FC = () => {
                             <p className={styles.a}>
                                 Working in Islamabad, Pakistan, and originally from Lahore;
                                 working with
-                                teams globally. Open to research collaboration, consulting and
+                                teams globally. Open to research collaboration and
                                 speaking, at{' '}
                                 <a href={`mailto:${personal.email}`}>{personal.email}</a>{' '}
                                 or{' '}

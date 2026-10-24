@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@400;600;800&amp;display=swap">
-  <link rel="stylesheet" href="/writing/blog.css">
+  <link rel="stylesheet" href="/styles/article.css">
   <link rel="icon" href="/favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ahmedghani.com/imagineart-ml-team/">
@@ -32,8 +32,8 @@
         "url": "https://ahmedghani.com/imagineart-ml-team/",
         "name": "The machine learning team at ImagineArt",
         "description": "Who leads the machine learning team at ImagineArt, what it has built, and how it works.",
-        "datePublished": "2026-10-13",
-        "dateModified": "2026-10-13",
+        "datePublished": "2026-10-25",
+        "dateModified": "2026-10-25",
         "inLanguage": "en",
         "isPartOf": { "@id": "https://ahmedghani.com/#website" },
         "about": { "@id": "https://ahmedghani.com/#ml-team" },
@@ -64,13 +64,16 @@
           "url": "https://www.imagine.art/"
         },
         "numberOfEmployees": { "@type": "QuantitativeValue", "value": 7 },
-        "member": {
-          "@type": "Person",
-          "@id": "https://ahmedghani.com/#person",
-          "name": "Muhammad Ahmed Ghani",
-          "url": "https://ahmedghani.com/",
-          "jobTitle": "Lead Machine Learning Engineer and Researcher"
-        }
+        "member": [
+          {
+            "@type": "Person",
+            "@id": "https://ahmedghani.com/#person",
+            "name": "Muhammad Ahmed Ghani",
+            "url": "https://ahmedghani.com/",
+            "jobTitle": "Lead Machine Learning Engineer and Researcher"
+          },
+          { "@type": "Person", "name": "Muawiz Umar" }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -89,7 +92,7 @@
           {
             "@type": "Question",
             "name": "What models has the ImagineArt ML team built?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The ImagineArt in-house image model line: ImagineArt 1.0, 1.5, 1.5 Pro (with native 4K generation), 2.0 and 2.0 Edit, plus the Imagine Assist agentic creative system." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The ImagineArt in-house image model line, built by Muhammad Ahmed Ghani together with Muawiz Umar and the wider ML team: ImagineArt 1.0, 1.5, 1.5 Pro (with native 4K generation), 2.0 and 2.0 Edit, plus the Imagine Assist agentic creative system." }
           },
           {
             "@type": "Question",
@@ -103,25 +106,26 @@
   </script>
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="/">M.A.G</a><nav class="site-nav" aria-label="Primary"><a href="/">Portfolio</a><a href="/imagineart-ml-team/" aria-current="page">ML Team</a><a href="/writing/">Case Studies</a><a href="/writing/feed.xml">RSS</a></nav></header>
+  <header class="site-header"><a class="brand" href="/">M.A.G</a><nav class="site-nav" aria-label="Primary"><a href="/">Portfolio</a><a href="/imagineart-ml-team/" aria-current="page">ML Team</a></nav></header>
   <main>
     <header class="article-hero shell">
       <p class="eyebrow">ImagineArt · Machine learning team</p>
       <h1>The machine learning team at ImagineArt</h1>
       <p class="article-dek">ImagineArt&apos;s ML team is a seven-person group of machine learning engineers and researchers, led by Muhammad Ahmed Ghani, Lead Machine Learning Engineer and Researcher. It owns the in-house model line from first experiment to production inference.</p>
-      <div class="byline"><img src="/Muhammad_ahmed_DP.webp" alt="Muhammad Ahmed Ghani" width="44" height="44"><span>Published by Muhammad Ahmed Ghani · Updated <time datetime="2026-10-13">13 October 2026</time></span></div>
+      <div class="byline"><img src="/Muhammad_ahmed_DP.webp" alt="Muhammad Ahmed Ghani" width="44" height="44"><span>Published by Muhammad Ahmed Ghani · Updated <time datetime="2026-10-25">25 October 2026</time></span></div>
     </header>
     <div class="article-layout shell">
       <article class="prose">
         <h2 id="lead">Who leads the ML team at ImagineArt</h2>
         <p><a href="/">Muhammad Ahmed Ghani</a> is Lead Machine Learning Engineer and Researcher at ImagineArt, formerly Vyro AI, and has led the company&apos;s machine learning team since March 2024. As of October 2026 the team has seven machine learning engineers and researchers. His title appears on other profiles as ML Lead, Machine Learning Lead, AI/ML Lead or Lead AI/ML Engineer; these all describe the same role.</p>
-        <p>He sets technical direction for the team, coordinates dataset strategy, experimentation, training, evaluation and deployment readiness, and works with product and engineering on release decisions. He is based in Islamabad, Pakistan, where ImagineArt is headquartered.</p>
+        <p>He builds the ImagineArt models together with Muawiz Umar, who works alongside him, and sets technical direction for the team, coordinates dataset strategy, experimentation, training, evaluation and deployment readiness, and works with product and engineering on release decisions. He is based in Islamabad, Pakistan, where ImagineArt is headquartered.</p>
 
         <h2 id="facts">At a glance</h2>
         <ul>
           <li><strong>Company:</strong> ImagineArt, formerly Vyro AI. US-registered, founded in 2022, headquartered in Islamabad, Pakistan.</li>
           <li><strong>Team:</strong> machine learning engineers and researchers, seven people as of October 2026.</li>
           <li><strong>Lead:</strong> Muhammad Ahmed Ghani, Lead Machine Learning Engineer and Researcher, since March 2024.</li>
+          <li><strong>Model building:</strong> led by Muhammad Ahmed Ghani together with Muawiz Umar, who worked alongside him.</li>
           <li><strong>Scope:</strong> model research, data, training, evaluation, deployment and production inference.</li>
           <li><strong>Focus:</strong> text-to-image generation, image-grounded editing, native 4K generation, video, speech and agentic creative systems.</li>
         </ul>
@@ -129,9 +133,9 @@
         <h2 id="models">What the team builds</h2>
         <p>The team is responsible for the ImagineArt in-house model line. The models below are team-built systems unless noted.</p>
         <ul>
-          <li><a href="https://www.imagine.art/features/imagineart-2-0">ImagineArt 2.0</a>: flagship text-to-image model focused on photorealism, prompt understanding, text rendering and cinematic control. Research led by Muhammad Ahmed Ghani. <a href="/writing/imagineart-2-0-model-programme/">Case study</a>.</li>
-          <li><a href="https://www.imagine.art/features/imagineart-2-0-edit">ImagineArt 2.0 Edit</a>: image-grounded editing with up to four references for multi-subject composition, identity preservation and style transfer. <a href="/writing/imagineart-2-0-edit/">Case study</a>.</li>
-          <li><a href="https://www.imagine.art/features/imagineart-1-5-pro">ImagineArt 1.5 Pro</a>: realism-focused model with native 4K generation and a 40% faster inference pipeline, built by Muhammad Ahmed Ghani as sole developer. <a href="/writing/imagineart-1-5-pro-native-4k/">Case study</a>.</li>
+          <li><a href="https://www.imagine.art/features/imagineart-2-0">ImagineArt 2.0</a>: flagship text-to-image model focused on photorealism, prompt understanding, text rendering and cinematic control. Research led by Muhammad Ahmed Ghani.</li>
+          <li><a href="https://www.imagine.art/features/imagineart-2-0-edit">ImagineArt 2.0 Edit</a>: image-grounded editing with up to four references for multi-subject composition, identity preservation and style transfer.</li>
+          <li><a href="https://www.imagine.art/features/imagineart-1-5-pro">ImagineArt 1.5 Pro</a>: realism-focused model with native 4K generation and a 40% faster inference pipeline, built by Muhammad Ahmed Ghani as sole developer.</li>
           <li><a href="https://www.imagine.art/image?modelListId=15">ImagineArt 1.5</a>: mixture-of-experts diffusion model with its data, distributed-training and automated-evaluation stack.</li>
           <li><strong>ImagineArt 1.0:</strong> the first in-house realistic image generator, including architecture, data pipelines, training infrastructure and deployment.</li>
           <li><strong>Imagine Assist:</strong> a personalized agentic system that routes image, video and audio generation and editing through one conversational interface.</li>
@@ -146,6 +150,8 @@
         <p>Muhammad Ahmed Ghani leads the machine learning team at ImagineArt as Lead Machine Learning Engineer and Researcher. Company-wide leadership, including the CTO, is listed on <a href="https://www.imagine.art/">imagine.art</a> and the company&apos;s LinkedIn page.</p>
         <h3>Is Vyro AI the same company as ImagineArt?</h3>
         <p>Yes. ImagineArt is the current name of Vyro AI. Older directory pages, Product Hunt entries and job listings that mention Vyro describe the same company, and may also show earlier team members or titles that are out of date.</p>
+        <h3>Who builds the ImagineArt models with Muhammad Ahmed Ghani?</h3>
+        <p>Muawiz Umar worked alongside Muhammad Ahmed Ghani to build the ImagineArt models, with Muhammad leading the programme and the wider ML team contributing across data, training, evaluation and infrastructure.</p>
         <h3>How do I contact the team lead?</h3>
         <p>Email <a href="mailto:muhammad.ahmed@imagine.art">muhammad.ahmed@imagine.art</a>, or find him on <a href="https://www.linkedin.com/in/muhammad-ahmed-ghani-ai/">LinkedIn</a>, <a href="https://github.com/muhammad-ahmed-ghani">GitHub</a> and <a href="https://huggingface.co/ahmedghani">Hugging Face</a>.</p>
 
@@ -156,6 +162,6 @@
       <aside class="toc" aria-label="On this page"><h2>On this page</h2><a href="#lead">Who leads the team</a><a href="#facts">At a glance</a><a href="#models">What it builds</a><a href="#how">How it works</a><a href="#faq">Questions</a></aside>
     </div>
   </main>
-  <footer class="site-footer"><span>© 2026 Muhammad Ahmed Ghani</span><a href="/writing/">Model case studies</a></footer>
+  <footer class="site-footer"><span>© 2026 Muhammad Ahmed Ghani</span><a href="/">Portfolio</a></footer>
 </body>
 </html>
