@@ -104,10 +104,6 @@ const Footer: React.FC = () => {
         {/* Copyright bar */}
         <div className={styles.bar}>
           <p>&copy; {new Date().getFullYear()} Muhammad Ahmed Ghani</p>
-          <div className={styles.status}>
-            <span className={styles.statusDot} />
-            Open to new work
-          </div>
         </div>
       </div>
     </footer>

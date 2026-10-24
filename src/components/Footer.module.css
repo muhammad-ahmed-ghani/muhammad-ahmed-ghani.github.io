@@ -147,21 +147,6 @@
   letter-spacing: 0.08em;
 }
 
-.status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.statusDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 10px #10b981;
-  flex-shrink: 0;
-}
-
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 1024px) {
   .footer { padding: 80px 0 40px; }
