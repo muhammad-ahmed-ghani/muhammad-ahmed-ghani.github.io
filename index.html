@@ -30,7 +30,6 @@
 
   <!-- Plain-text summary for LLM agents -->
   <link rel="alternate" type="text/markdown" href="/llms.txt" title="llms.txt" />
-  <link rel="alternate" type="application/rss+xml" href="/writing/feed.xml" title="Muhammad Ahmed Ghani — Writing" />
 
   <!-- Geographic -->
   <meta name="geo.region" content="PK-IS" />
@@ -165,6 +164,7 @@
         },
         "nationality": { "@type": "Country", "name": "Pakistan" },
         "worksFor": { "@id": "https://www.imagine.art/#organization" },
+        "colleague": { "@type": "Person", "name": "Muawiz Umar" },
         "memberOf": { "@id": "https://ahmedghani.com/#ml-team" },
         "hasOccupation": {
           "@type": "Occupation",
@@ -308,7 +308,7 @@
         "url": "https://ahmedghani.com/imagineart-ml-team/",
         "parentOrganization": { "@id": "https://www.imagine.art/#organization" },
         "numberOfEmployees": { "@type": "QuantitativeValue", "value": 7 },
-        "member": { "@id": "https://ahmedghani.com/#person" },
+        "member": [{ "@id": "https://ahmedghani.com/#person" }, { "@type": "Person", "name": "Muawiz Umar" }],
         "knowsAbout": ["Diffusion models", "Flow matching", "Text-to-image generation", "Image editing", "Native 4K generation", "Video generation", "Model evaluation", "Production inference"]
       },
 
@@ -317,12 +317,12 @@
         "@id": "https://ahmedghani.com/#webpage",
         "url": "https://ahmedghani.com/",
         "name": "Muhammad Ahmed Ghani — Lead Machine Learning Engineer and Researcher at ImagineArt",
-        "description": "Portfolio and model case studies of Muhammad Ahmed Ghani, Lead Machine Learning Engineer and Researcher at ImagineArt, where he leads the ML team.",
+        "description": "Portfolio of Muhammad Ahmed Ghani, Lead Machine Learning Engineer and Researcher at ImagineArt, where he leads the ML team.",
         "isPartOf": { "@id": "https://ahmedghani.com/#website" },
         "about": { "@id": "https://ahmedghani.com/#person" },
         "mainEntity": { "@id": "https://ahmedghani.com/#person" },
         "primaryImageOfPage": { "@id": "https://ahmedghani.com/#person" },
-        "dateModified": "2026-10-13",
+        "dateModified": "2026-10-25",
         "inLanguage": "en",
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -342,7 +342,7 @@
         "@id": "https://ahmedghani.com/#website",
         "url": "https://ahmedghani.com/",
         "name": "Muhammad Ahmed Ghani",
-        "description": "Portfolio and ImagineArt model case studies by Muhammad Ahmed Ghani — Lead Machine Learning Engineer and Researcher.",
+        "description": "Portfolio of Muhammad Ahmed Ghani — Lead Machine Learning Engineer and Researcher.",
         "publisher": { "@id": "https://ahmedghani.com/#person" },
         "inLanguage": "en"
       },
@@ -430,6 +430,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "He leads research and engineering on generative models: diffusion and flow-matching image models, video generation with temporal consistency, speech systems, and agentic AI. His work covers model architecture, training, evaluation, distillation and quantisation, and the inference infrastructure that serves those models in production."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who built the ImagineArt models?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Muhammad Ahmed Ghani led the ImagineArt model programme and built the models together with Muawiz Umar, who worked alongside him throughout, supported by the wider ML team."
             }
           },
           {

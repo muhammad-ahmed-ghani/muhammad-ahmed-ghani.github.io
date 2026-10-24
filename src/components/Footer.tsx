@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                   {item.label}
                 </a>
               ))}
-              <a href="/writing/" className={styles.navLink}>Writing</a>
+              <a href="/imagineart-ml-team/" className={styles.navLink}>ML Team</a>
             </div>
 
             <div className={styles.navGroup}>

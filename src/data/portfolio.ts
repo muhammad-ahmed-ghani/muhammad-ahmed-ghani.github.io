@@ -27,6 +27,7 @@ export const portfolioData = {
             period: "Mar 2024 – Present",
             details: [
                 "Lead and mentor a seven-person ML team across research, product delivery and production infrastructure.",
+                "Led the ImagineArt model programme, building the models alongside Muawiz Umar.",
                 "Led research for ImagineArt 2.0 and 2.0 Edit across photorealism, prompt understanding, typography, multi-image composition and identity preservation.",
                 "Built ImagineArt 1.5 Pro as sole developer, including native 4K generation and a 40% faster inference pipeline.",
                 "Built Imagine Assist to orchestrate image, video and audio tools through one conversational interface.",
@@ -103,7 +104,7 @@ export const portfolioData = {
             id: "P.001",
             title: "ImagineArt 2.0 & 2.0 Edit",
             category: "Lead Research · Generative AI",
-            description: "Led research and an ML team across the flagship text-to-image and image-editing models: photorealism, prompt understanding, typography, multi-image composition and identity preservation.",
+            description: "Led research and an ML team, together with Muawiz Umar, across the flagship text-to-image and image-editing models: photorealism, prompt understanding, typography, multi-image composition and identity preservation.",
             link: "https://www.imagine.art/features/imagineart-2-0",
             featured: true
         },

@@ -19,10 +19,6 @@ const HOST = 'ahmedghani.com';
 const URLS = [
   'https://ahmedghani.com/',
   'https://ahmedghani.com/imagineart-ml-team/',
-  'https://ahmedghani.com/writing/',
-  'https://ahmedghani.com/writing/imagineart-2-0-model-programme/',
-  'https://ahmedghani.com/writing/imagineart-2-0-edit/',
-  'https://ahmedghani.com/writing/imagineart-1-5-pro-native-4k/',
 ];
 
 const keyUrl = `https://${HOST}/${KEY}.txt`;
